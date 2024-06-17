@@ -35,12 +35,17 @@ body {
   flex-direction: row;
   align-items: center;
 }
+
 .logoAndText p{
  font-size: 1.5rem;
  color: rgb(255, 253, 240);
  font-family: fantasy;
 
 }
+
+.logoAndText a{
+  padding-top: 10px;
+ }
 
 .navLinks a{
   text-decoration: none;
