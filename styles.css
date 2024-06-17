@@ -40,7 +40,6 @@ body {
  font-size: 1.5rem;
  color: rgb(255, 253, 240);
  font-family: fantasy;
-
 }
 
 .logoAndText a{
@@ -83,11 +82,9 @@ nav li{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   font-family:fantasy; 
   background: url("./images/victoria-shes-UC0HZdUitWY-unsplash.png")
     no-repeat center center/cover;
-  
   color: white;
   text-align: center;
   padding: 2rem 0;
@@ -161,9 +158,44 @@ footer p {
   font-size: 0.9rem;
 }
 
+.menuBtn{
+  display: none;
+  font-family: fantasy;
+  font-weight: 1000;
+  font-size: large;
+  background-color: #a52a2a;
+  border: 0;
+  color: aliceblue;
+}
+
+.menuBtn:hover{
+  font-family: fantasy;
+  font-weight: 1000;
+  font-size: large;
+  background-color: #a52a2a;
+  border: 0;
+  color: aliceblue;
+  text-decoration: underline;
+}
+
+.dropDown{
+  display: none;
+}
+.menuIcon{
+  width: 40px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .bannerSection h1 {
+    font-size: 2rem;
+  }
+
+  .emphText2{
+    font-size: 3rem;
+  }
+
+  .emphText{
     font-size: 2rem;
   }
 
@@ -174,4 +206,36 @@ footer p {
   nav ul li {
     margin: 0.5rem 0;
   }
+
+  .logoAndText p{
+    font-size: 1rem;
+    color: rgb(255, 253, 240);
+    font-family: fantasy;
+   }
+
+   .navLinks{
+    display: none;
+   }
+   
+   .menuBtn{
+    display: flex;
+   }
+
+   .dropDown{
+    display: flex;
+    flex-direction: column;
+   }
+   .dropDown div{
+    background-color: #a52a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   
+   .dropDown a{
+    text-decoration: none;
+    color:rgb(248, 241, 232);
+    font-family: fantasy;
+    
+   }
 }
