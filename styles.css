@@ -189,7 +189,6 @@ footer p {
 }
 
 .orderBody{
-  height:1200px ;
   background: url("./images/orderBgImg.png")
   no-repeat center center/cover;
   display: flex;
@@ -201,14 +200,13 @@ footer p {
 
 .orderForm{
   width:1000px;
-  background-color:white;
+  /* background-color:white; */
   border-radius: 30px;
 }
 
 .orderPic{
   width: 200px;
   border-radius: 8px;
-  margin-right: 30px;
 }
 
 .optionDetails p{
@@ -244,6 +242,12 @@ footer p {
 .qaunInput input{
   width: 50px ;
   margin-left: 50px;
+  background-color:rgb(238, 225, 208);
+  border: #f4f4f4;
+  color: #a52a2a;
+  font-size: larger;
+  border-radius: 15px;
+  padding-left: 20px;
 }
 
 .OrderCategory h1{
@@ -254,11 +258,19 @@ footer p {
 
 .encapCard hr{
   display: none;
+  border-radius: 15px;
 }
 
 .categoryOptions{
   display: flex;
   flex-direction: row;
+}
+
+.encapCard{
+  background-color:antiquewhite;
+  border-radius: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 
@@ -323,7 +335,7 @@ footer p {
   }
 
   .orderBody{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.615);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
@@ -355,12 +367,13 @@ footer p {
   .qaunInput input{
     width: 40px ;
     margin-left: 0;
+    background-color:rgb(230, 219, 206);
+    border: #f4f4f4;
   }
 
 
 .orderForm{
   width:400px;
-  background-color:white;
   border-radius: 30px;
 }
 
