@@ -189,11 +189,78 @@ footer p {
 }
 
 .orderBody{
-  height:1000px ;
-  background: url("./images/orderBgImg.png");
-
-
+  height:1200px ;
+  background: url("./images/orderBgImg.png")
+  no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.orderForm{
+  width:1000px;
+  background-color:white;
+  border-radius: 30px;
+}
+
+.orderPic{
+  width: 200px;
+  border-radius: 8px;
+  margin-right: 30px;
+}
+
+.optionDetails p{
+  font-size: medium;
+  margin-right: 30px;
+}
+
+.addButton{
+  background-color: #a52a2a;
+  border: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+}
+
+
+.optionCard{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: start;
+}
+
+.qaunInput{
+  display: flex;
+  flex-direction: row;
+}
+
+.qaunInput input{
+  width: 50px ;
+  margin-left: 50px;
+}
+
+.OrderCategory h1{
+  font-family: fantasy;
+  color:#a52a2a;
+  font-size: xx-large;
+}
+
+.encapCard hr{
+  display: none;
+}
+
+.categoryOptions{
+  display: flex;
+  flex-direction: row;
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -248,4 +315,65 @@ footer p {
     font-family: fantasy;
     
    }
+
+   .orderPic{
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 30px;
+  }
+
+  .orderBody{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .optionCard{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .optionDetails p{
+    font-size: medium;
+    margin-right: 30px;
+  }
+
+  .encapCard hr{
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.374);
+  }
+
+
+  .qaunInput{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .qaunInput input{
+    width: 40px ;
+    margin-left: 0;
+  }
+
+
+.orderForm{
+  width:400px;
+  background-color:white;
+  border-radius: 30px;
+}
+
+.encapCard hr{
+  display: block;
+}
+
+
+.categoryOptions{
+  display: flex;
+  flex-direction: column;
+}
+
+  
+
 }
