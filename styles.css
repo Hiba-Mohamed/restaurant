@@ -96,6 +96,8 @@ nav li{
   font-size: 3rem;
   letter-spacing: 2px;
 }
+header{  font-family:fantasy;
+}
 
 nav ul {
   list-style: none;
@@ -178,11 +180,19 @@ footer p {
   text-decoration: underline;
 }
 
-.dropDown{
+.dropDownHidden{
   display: none;
 }
+
 .menuIcon{
   width: 40px;
+}
+
+.orderBody{
+  height:1000px ;
+  background: url("./images/orderBgImg.png");
+
+
 }
 
 /* Responsive design */
