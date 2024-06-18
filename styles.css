@@ -199,9 +199,14 @@ footer p {
 }
 
 .orderForm{
-  width:1000px;
-  /* background-color:white; */
   border-radius: 30px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  flex-wrap: wrap;
+
+
 }
 
 .orderPic{
@@ -242,11 +247,11 @@ footer p {
 .qaunInput input{
   width: 50px ;
   margin-left: 50px;
-  background-color:rgb(238, 225, 208);
+  background-color:rgb(250, 248, 244);
   border: #f4f4f4;
   color: #a52a2a;
   font-size: larger;
-  border-radius: 15px;
+  border-radius: 5px;
   padding-left: 20px;
 }
 
@@ -264,10 +269,11 @@ footer p {
 .categoryOptions{
   display: flex;
   flex-direction: row;
+  align-items:center;
 }
 
 .encapCard{
-  background-color:antiquewhite;
+  background-color:rgb(255, 255, 255);
   border-radius: 15px;
   margin-left: 20px;
   margin-right: 20px;
@@ -279,7 +285,7 @@ footer p {
   flex-direction: column;
   align-items: center;
   font-size: large;
-  background-color: rgba(255, 255, 255, 0.531);
+  background-color: white;
   padding: 40px;
   border-radius: 5px;
   
@@ -289,7 +295,8 @@ footer p {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  border-color: bisque;
+  border: 0;
+  background-color:rgb(250, 248, 244);
 }
 
 .custInfo .label1{
@@ -299,6 +306,16 @@ footer p {
   margin-right: 32px;
 }
 
+
+.orderSubmit{
+  background-color: #a52a2a;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  font-size: large;
+  padding: 10px 50px 10px 50px;
+  margin-top: 50px;
+}
 
 
   
@@ -396,7 +413,7 @@ footer p {
   .qaunInput input{
     width: 40px ;
     margin-left: 0;
-    background-color:rgb(230, 219, 206);
+    background-color:rgb(250, 248, 244);
     border: #f4f4f4;
   }
 
@@ -404,6 +421,7 @@ footer p {
   .orderForm{
     width:400px;
     border-radius: 30px;
+    margin-bottom: 100px;
   }
 
   .encapCard hr{
@@ -421,7 +439,7 @@ footer p {
     flex-direction: column;
     align-items: center;
     font-size: large;
-    background-color: rgba(255, 255, 255, 0.531);
+    background-color: white;
     padding: 40px;
     border-radius: 5px;
     
@@ -431,7 +449,8 @@ footer p {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    border-color: bisque;
+    border: 0;
+    background-color:rgb(250, 248, 244);
   }
 
   .custInfo .label1{
@@ -441,6 +460,16 @@ footer p {
     margin-right: 32px;
   }
   
+
+  .orderSubmit{
+    background-color: #a52a2a;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: large;
+    padding: 10px 50px 10px 50px;
+    margin-top: 50px;
+  }
 
 
     
