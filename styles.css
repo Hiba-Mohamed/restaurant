@@ -274,6 +274,35 @@ footer p {
 }
 
 
+.custInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: large;
+  background-color: rgba(255, 255, 255, 0.531);
+  padding: 40px;
+  border-radius: 5px;
+  
+}
+
+.custInfo input{
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-color: bisque;
+}
+
+.custInfo .label1{
+  margin-right: 29px;
+}
+.custInfo .label3{
+  margin-right: 32px;
+}
+
+
+
+  
+
 /* Responsive design */
 @media (max-width: 768px) {
   .bannerSection h1 {
@@ -372,21 +401,48 @@ footer p {
   }
 
 
-.orderForm{
-  width:400px;
-  border-radius: 30px;
-}
+  .orderForm{
+    width:400px;
+    border-radius: 30px;
+  }
 
-.encapCard hr{
-  display: block;
-}
+  .encapCard hr{
+    display: block;
+  }
 
 
-.categoryOptions{
-  display: flex;
-  flex-direction: column;
-}
+  .categoryOptions{
+    display: flex;
+    flex-direction: column;
+  }
 
+  .custInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    background-color: rgba(255, 255, 255, 0.531);
+    padding: 40px;
+    border-radius: 5px;
+    
+  }
+
+  .custInfo input{
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-color: bisque;
+  }
+
+  .custInfo .label1{
+    margin-right: 29px;
+  }
+  .custInfo .label3{
+    margin-right: 32px;
+  }
   
 
-}
+
+    
+
+  }
