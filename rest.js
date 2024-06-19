@@ -65,6 +65,21 @@
                     }
                 }
 
+                const OrderDetailsTable = document.querySelector('#orderDetailsTable')
+
+                orderDetails.forEach(element => {
+                    const output = `
+                    <tr>
+                        <td>${element.itemName}</td>
+                        <td>${element.itemPrice}$</td>
+                        <td>X<td/>
+                        <td>${element.itemQuant} = </td>
+                        <td>${element.totalPrice}$</td>
+                    </tr>`
+
+                    OrderDetailsTable.innerHTML += output
+                })
+
             
         })
     
