@@ -273,10 +273,12 @@ footer p {
 }
 
 .encapCard{
-  background-color:rgb(255, 255, 255);
+  background-color:white;
   border-radius: 15px;
   margin-left: 20px;
   margin-right: 20px;
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.283);
+
 }
 
 
