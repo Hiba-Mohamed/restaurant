@@ -32,54 +32,85 @@
         const submitButton = document.querySelector("#orderSubmit")
         submitButton.addEventListener('click', function(e){
             e.preventDefault();
-            let orderDetails=[];
-            let subtotal = 0;
-            const priceListLength = menuPrices.length;
-            console.log(priceListLength)
-            const inputFieldsLength = document.querySelector("#orderForm").elements.length;
-            console.log(inputFieldsLength)
-            for (var i=0; i < inputFieldsLength; i++)
-                {
-                    if(document.querySelector("#orderForm").elements[i].value !== "" 
-                    && document.querySelector("#orderForm").elements[i].value !== 0)
-                    {
-                        const itemName = document.querySelector("#orderForm").elements[i].name;
-                        const itemQuant = document.querySelector("#orderForm").elements[i].value;
-                        parseInt(itemQuant)
-                        console.log(itemName)
-                        console.log(itemQuant)
-                    
-                        for (var j = 0; j < priceListLength; j++) {
-                        if (menuPrices[j][0] === itemName)
-                            {
-                            const itemPrice =  menuPrices[j][1];
-                            console.log(itemPrice)
-                            const totalPrice = itemPrice * itemQuant
-                            subtotal += totalPrice
-                            orderDetails.push({itemName,itemQuant,itemPrice,totalPrice})
-                            console.log(orderDetails)
-                            }
-                    }
-                    console.log(subtotal)
 
+            const customerName = document.querySelector('#customerName').value;
+            const customerCard = document.querySelector('#customerCard').value;
+            const customerAddress = document.querySelector('#customerAddress').value;
+            const nameErrorMessage = document.querySelector('#nameErrorMessage');
+            const cardErrorMessage = document.querySelector('#cardErrorMessage');
+            const addressErrorMessage = document.querySelector('#addressErrorMessage');
+            
+            
+
+            if (customerName === "" ){
+                nameErrorMessage.innerText = 'Full name must NOT be empty'
+            }
+            else{
+                nameErrorMessage.innerText =""
+                if (customerCard === "" ){
+                    cardErrorMessage.innerText = 'Card number must NOT be empty'
+                }
+                else{
+                    cardErrorMessage.innerText =""
+                    if (customerAddress === ""){
+                        addressErrorMessage.innerHTML = 'Address must NOT be empty'
+                    }
+                    else{
+                        
+                        addressErrorMessage.innerText=""
+                        let orderDetails=[];
+                        let subtotal = 0;
+                        const priceListLength = menuPrices.length;
+                        console.log(priceListLength)
+                        const inputFieldsLength = document.querySelector("#orderForm").elements.length;
+                        console.log(inputFieldsLength)
+                        for (var i=0; i < inputFieldsLength; i++)
+                            {
+                                if(document.querySelector("#orderForm").elements[i].value !== "" 
+                                && document.querySelector("#orderForm").elements[i].value !== 0)
+                                {
+                                    const itemName = document.querySelector("#orderForm").elements[i].name;
+                                    const itemQuant = document.querySelector("#orderForm").elements[i].value;
+                                    parseInt(itemQuant)
+                                    console.log(itemName)
+                                    console.log(itemQuant)
+                                
+                                    for (var j = 0; j < priceListLength; j++) {
+                                    if (menuPrices[j][0] === itemName)
+                                        {
+                                        const itemPrice =  menuPrices[j][1];
+                                        console.log(itemPrice)
+                                        const totalPrice = itemPrice * itemQuant
+                                        subtotal += totalPrice
+                                        orderDetails.push({itemName,itemQuant,itemPrice,totalPrice})
+                                        console.log(orderDetails)
+                                        }
+                                }
+                                console.log(subtotal)
+            
+                                }
+                            }
+            
+                            const OrderDetailsTable = document.querySelector('#orderDetailsTable')
+            
+                            orderDetails.forEach(element => {
+                                const output = `
+                                <tr>
+                                    <td>${element.itemName}</td>
+                                    <td>${element.itemPrice}$</td>
+                                    <td>X</td>
+                                    <td>${element.itemQuant} = </td>
+                                    <td>${element.totalPrice}$</td>
+                                </tr>`
+            
+                                OrderDetailsTable.innerHTML += output
+                            })
+            
                     }
                 }
-
-                const OrderDetailsTable = document.querySelector('#orderDetailsTable')
-
-                orderDetails.forEach(element => {
-                    const output = `
-                    <tr>
-                        <td>${element.itemName}</td>
-                        <td>${element.itemPrice}$</td>
-                        <td>X</td>
-                        <td>${element.itemQuant} = </td>
-                        <td>${element.totalPrice}$</td>
-                    </tr>`
-
-                    OrderDetailsTable.innerHTML += output
-                })
-
+               
+            }
+            
             
         })
     

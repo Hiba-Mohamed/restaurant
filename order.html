@@ -439,15 +439,15 @@
         </section>
 
             <section class="noteSection">
-                <h2>*Note*</h2>
+                <h3>*Note*</h3>
                 <p>All prices are subject to an additional 15% HST.</p>
             </section>
 
 
         <div class="custInfo">
-            <div><label class="label1" for="custName">Full name:</label> <input type="text"></div>
-            <div><label class="label2" for="custName">Card Number: </label> <input type="text"></div>
-            <div><label class="label3" for="custName">Address:</label> <input type="text"></div>
+            <div><label class="label1"  for="custName">Full name:</label> <input id="customerName"  name="customerName" type="text"><p id="nameErrorMessage"></p></div>
+            <div><label class="label2" for="custCard">Card Number: </label> <input id="customerCard" name="customerCard" type="text"><p id="cardErrorMessage"></p</div>
+            <div><label class="label3" for="custAddress">Address:</label> <input id="customerAddress" name="customerAddress" type="text"><p id="addressErrorMessage"></p</div>
         </div>
         <button class="orderSubmit" id="orderSubmit">Place Order</button>
 
