@@ -263,18 +263,19 @@ footer p {
 .OrderCategory h1{
   font-family: fantasy;
   color:#a52a2a;
-  font-size: xx-large;
+  font-size:2.5rem;
 }
 
-.encapCard hr{
-  display: none;
-  border-radius: 15px;
-}
+
+
 
 .categoryOptions{
   display: flex;
   flex-direction: row;
-  align-items:center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content:center;
+
 }
 
 .encapCard{
@@ -282,7 +283,8 @@ footer p {
   border-radius: 15px;
   margin-left: 20px;
   margin-right: 20px;
-  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.283);
+  margin-top: 50px;
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
 
 }
 
@@ -291,7 +293,7 @@ footer p {
   background-color:white;
   border-radius: 15px;
   margin: 20px 40px 20px 40px;
-  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.283);
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.151);
 }
 
 
@@ -305,7 +307,7 @@ footer p {
   border-radius: 5px;
   border-radius: 15px;
   margin: 20px 40px 20px 40px;
-  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.283);
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.159);
   
 }
 
@@ -333,6 +335,21 @@ footer p {
   font-size: large;
   padding: 10px 50px 10px 50px;
   margin-top: 50px;
+}
+
+#orderDetailsTable{
+  width: 260px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: medium;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 20px 10px 20px 10px;
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.283);
+  align-items: start;
+  
 }
 
 
@@ -416,11 +433,6 @@ footer p {
     margin-right: 30px;
   }
 
-  .encapCard hr{
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.374);
-  }
-
 
   .qaunInput{
     display: flex;
@@ -440,10 +452,6 @@ footer p {
     width:400px;
     border-radius: 30px;
     margin-bottom: 100px;
-  }
-
-  .encapCard hr{
-    display: block;
   }
 
 
@@ -489,6 +497,24 @@ footer p {
     margin-top: 50px;
   }
 
+  .tableHead td{
+    font-weight: bold;
+  }
+
+  #orderDetailsTable{
+    width: 260px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: medium;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 20px 10px 20px 10px;
+    box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.283);
+    align-items: start;
+    
+  }
 
     
 
