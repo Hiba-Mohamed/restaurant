@@ -1,3 +1,17 @@
+const menuButton = document.querySelector('.menuBtn');
+menuButton.addEventListener('click', function(){
+    const dropDownDiv = document.querySelector('#hamburgerMenu')
+   if( dropDownDiv.classList.contains('dropDownHidden')){
+     dropDownDiv.classList.remove('dropDownHidden')
+     dropDownDiv.classList.add('dropDown')
+}
+else{
+    if(dropDownDiv.classList.contains('dropDown')){
+    dropDownDiv.classList.remove('dropDown')
+     dropDownDiv.classList.add('dropDownHidden')}
+}
+})       
+        
         const menuPrices = 
        [
             ["hummus", 6.99],
@@ -56,7 +70,9 @@
                         addressErrorMessage.innerHTML = 'Address must NOT be empty'
                     }
                     else{
-                        
+
+                        //items quantities validation and calculation logic
+
                         addressErrorMessage.innerText=""
                         let orderDetails=[];
                         let subtotal = 0;
@@ -71,7 +87,17 @@
                                 {
                                     const itemName = document.querySelector("#orderForm").elements[i].name;
                                     const itemQuant = document.querySelector("#orderForm").elements[i].value;
-                                    parseInt(itemQuant)
+                                    try {
+                                        parseInt(itemQuant)
+                                    } 
+                                    catch (error) {
+                                        console.log(error)
+                                        const errorMessage = document.createElement('p');
+                                        errorMessage.innerText = 'please enter a valid quantity number';
+                                        const itemDiv = document.querySelector('.qaunInput')[i];
+
+                                        itemDiv.appendChild(errorMessage)
+                                    }
                                     console.log(itemName)
                                     console.log(itemQuant)
                                 
