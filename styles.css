@@ -8,70 +8,67 @@ body {
   background-color: #f4f4f4;
 }
 
-.headerStrip{
+.headerStrip {
   height: 70px;
-  background-color:#a52a2a;
+  background-color: #a52a2a;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding-left: 50px;
-  padding-right:70px ;
+  padding-right: 70px;
 }
 
-.navLinks{
+.navLinks {
   display: flex;
   flex-direction: row;
   text-decoration: none;
 }
 
-.navLinks a:hover{
- text-decoration: underline;
+.navLinks a:hover {
+  text-decoration: underline;
 }
 
-
-.logoAndText{
+.logoAndText {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.logoAndText p{
- font-size: 1.5rem;
- color: rgb(255, 253, 240);
- font-family: fantasy;
+.logoAndText p {
+  font-size: 1.5rem;
+  color: rgb(255, 253, 240);
+  font-family: fantasy;
 }
 
-.logoAndText a{
+.logoAndText a {
   padding-top: 10px;
- }
+}
 
-.navLinks a{
+.navLinks a {
   text-decoration: none;
   color: rgb(255, 253, 240);
   padding-right: 80px;
 }
 
-nav li{
+nav li {
   text-decoration: none;
 }
 
-.emphText{
+.emphText {
   font-size: 4rem;
   display: block;
-  font-family:fantasy;
+  font-family: fantasy;
   font-weight: 1000;
-
 }
-.emphText2{
+.emphText2 {
   font-size: 6rem;
   display: block;
-  font-family:fantasy;
+  font-family: fantasy;
   font-weight: 1000;
-
 }
 
-.logo{
+.logo {
   width: 60px;
   margin: 6px;
 }
@@ -82,7 +79,7 @@ nav li{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family:fantasy; 
+  font-family: fantasy;
   background: url("./images/victoria-shes-UC0HZdUitWY-unsplash.png")
     no-repeat center center/cover;
   color: white;
@@ -96,7 +93,8 @@ nav li{
   font-size: 3rem;
   letter-spacing: 2px;
 }
-header{  font-family:fantasy;
+header {
+  font-family: fantasy;
 }
 
 nav ul {
@@ -149,7 +147,7 @@ section p {
 
 /* Footer styles */
 footer {
-  background: #333;
+  background: #a52a2a;
   color: white;
   text-align: center;
   padding: 1rem 0;
@@ -160,7 +158,7 @@ footer p {
   font-size: 0.9rem;
 }
 
-.menuBtn{
+.menuBtn {
   display: none;
   font-family: fantasy;
   font-weight: 1000;
@@ -170,7 +168,7 @@ footer p {
   color: aliceblue;
 }
 
-.menuBtn:hover{
+.menuBtn:hover {
   font-family: fantasy;
   font-weight: 1000;
   font-size: large;
@@ -180,47 +178,44 @@ footer p {
   text-decoration: underline;
 }
 
-.dropDownHidden{
+.dropDownHidden {
   display: none;
 }
 
-.menuIcon{
+.menuIcon {
   width: 40px;
 }
 
-.orderBody{
-  background: url("./images/orderBgImg.png")
-  no-repeat center center/cover;
+.orderBody {
+  background: url("./images/orderBgImg.png") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.orderForm{
+.orderForm {
   border-radius: 30px;
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   flex-wrap: wrap;
-
-
 }
 
-.orderPic{
+.orderPic {
   width: 200px;
   height: 200px;
   border-radius: 8px;
 }
 
-.optionDetails p{
+.optionDetails p {
   font-size: medium;
   margin-right: 30px;
 }
 
-.addButton{
+.addButton {
   background-color: #a52a2a;
   border: 0;
   padding-left: 8px;
@@ -231,8 +226,7 @@ footer p {
   border-radius: 5px;
 }
 
-
-.optionCard{
+.optionCard {
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -240,17 +234,15 @@ footer p {
   justify-items: start;
 }
 
-
-
-.qaunInput{
+.qaunInput {
   display: flex;
   flex-direction: row;
 }
 
-.qaunInput input{
-  width: 50px ;
+.qaunInput input {
+  width: 50px;
   margin-left: 50px;
-  background-color:rgb(250, 248, 244);
+  background-color: rgb(250, 248, 244);
   border: #f4f4f4;
   color: #a52a2a;
   font-size: larger;
@@ -258,46 +250,42 @@ footer p {
   padding-left: 20px;
 }
 
-.OrderCategory h1{
+.OrderCategory h1 {
   font-family: fantasy;
-  color:#a52a2a;
-  font-size:2.5rem;
+  color: #a52a2a;
+  font-size: 2.5rem;
 }
 
-
-.categoryOptions{
+.categoryOptions {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  justify-content:center;
-
+  justify-content: center;
 }
 
-.encapCard{
-  background-color:white;
+.encapCard {
+  background-color: white;
   border-radius: 15px;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 50px;
   box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
-
 }
 
-.noteSection{
+.noteSection {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   width: 440px;
   height: 20px;
-  background-color:white;
+  background-color: white;
   border-radius: 15px;
   box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.151);
 }
 
-
-.custInfo{
+.custInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -308,26 +296,24 @@ footer p {
   border-radius: 15px;
   margin: 20px 40px 20px 40px;
   box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.159);
-  
 }
 
-.custInfo input{
+.custInfo input {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
   border: 0;
-  background-color:rgb(250, 248, 244);
+  background-color: rgb(250, 248, 244);
 }
 
-.custInfo .label1{
+.custInfo .label1 {
   margin-right: 29px;
 }
-.custInfo .label3{
+.custInfo .label3 {
   margin-right: 32px;
 }
 
-
-.orderSubmit{
+.orderSubmit {
   background-color: #a52a2a;
   color: white;
   border: 0;
@@ -337,8 +323,8 @@ footer p {
   margin-top: 50px;
 }
 
-#orderDetailsTable{
-  width: 260px ;
+#orderDetailsTable {
+  width: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -347,58 +333,52 @@ footer p {
   border-radius: 5px;
   margin: 20px 10px 20px 10px;
   align-items: start;
-  
 }
 
-table{
-display: flex;
-flex-direction: column;
-align-items: start;
-justify-content: start;
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
 }
 
-
-
-
-.custInfo p{
+.custInfo p {
   font-size: small;
-  color:#a52a2a;
+  color: #a52a2a;
 }
 
-#orderDetailsTable td{
+#orderDetailsTable td {
   width: 200px;
 }
 
-th{
+th {
   font-weight: bolder;
   font-size: 2rem;
 }
 
-.custDisInfo{
+.custDisInfo {
   width: 300px;
   text-align: start;
   font-weight: bold;
-
 }
 
-.custDispDiv{
-display: flex;
-flex-direction: column;
-align-content: start;
+.custDispDiv {
+  display: flex;
+  flex-direction: column;
+  align-content: start;
 }
 
-.tableHead h4{
+.tableHead h4 {
   width: 250px;
 }
-  
-hr{
+
+hr {
   height: 1px;
   color: #00000067;
   width: 250px;
 }
 
-
-.calculationDiv tbody tr{
+.calculationDiv tbody tr {
   display: flex;
   align-items: start;
   flex-direction: row;
@@ -411,11 +391,11 @@ hr{
     font-size: 2rem;
   }
 
-  .emphText2{
+  .emphText2 {
     font-size: 3rem;
   }
 
-  .emphText{
+  .emphText {
     font-size: 2rem;
   }
 
@@ -427,51 +407,51 @@ hr{
     margin: 0.5rem 0;
   }
 
-  .logoAndText p{
+  .logoAndText p {
     font-size: 1rem;
     color: rgb(255, 253, 240);
     font-family: fantasy;
-   }
+  }
 
-   .navLinks{
+  .navLinks {
     display: none;
-   }
-   
-   .menuBtn{
-    display: flex;
-   }
+  }
 
-   .dropDown{
+  .menuBtn {
+    display: flex;
+  }
+
+  .dropDown {
     display: flex;
     flex-direction: column;
-   }
-   .dropDown div{
+  }
+  .dropDown div {
     background-color: #a52a2a;
     display: flex;
     flex-direction: column;
     align-items: center;
-   }
-   
-   .dropDown a{
-    text-decoration: none;
-    color:rgb(248, 241, 232);
-    font-family: fantasy;
-    
-   }
+  }
 
-   .orderPic{
+  .dropDown a {
+    text-decoration: none;
+    color: rgb(248, 241, 232);
+    font-family: fantasy;
+  }
+
+  .orderPic {
     width: 80px;
-    height: 80px ;
+    height: 80px;
     border-radius: 8px;
     margin-right: 30px;
   }
 
-  .orderBody{
+  .orderBody {
     background-color: rgba(255, 255, 255, 0.615);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
   }
 
-  .optionCard{
+  .optionCard {
     width: 450px;
     padding: 10px;
     display: flex;
@@ -480,39 +460,36 @@ hr{
     justify-items: start;
   }
 
- .optionDetails{
+  .optionDetails {
     width: 250px;
   }
-  
 
-  .encapCard{
-    background-color:white;
+  .encapCard {
+    background-color: white;
     border-radius: 15px;
     margin-top: 10px;
     box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
-  
   }
 
-  .optionDetails p{
+  .optionDetails p {
     font-size: medium;
     margin-right: 30px;
   }
 
-
-  .qaunInput{
+  .qaunInput {
     display: flex;
     align-items: center;
     flex-direction: column;
   }
 
-  .qaunInput input{
-    width: 40px ;
+  .qaunInput input {
+    width: 40px;
     margin-left: 0;
-    background-color:rgb(250, 248, 244);
+    background-color: rgb(250, 248, 244);
     border: #f4f4f4;
   }
 
-  .orderForm{
+  .orderForm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -520,20 +497,20 @@ hr{
     margin-bottom: 100px;
   }
 
-  .OrderCategory{
+  .OrderCategory {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .categoryOptions{
+  .categoryOptions {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
   }
 
-  .custInfo{
+  .custInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -541,26 +518,25 @@ hr{
     background-color: white;
     padding: 40px;
     border-radius: 5px;
-    
   }
 
-  .custInfo input{
+  .custInfo input {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
     border: 0;
-    background-color:rgb(250, 248, 244);
+    background-color: rgb(250, 248, 244);
   }
 
-  .custInfo .label1{
+  .custInfo .label1 {
     margin-right: 29px;
   }
 
-  .custInfo .label3{
+  .custInfo .label3 {
     margin-right: 32px;
   }
-  
-  .orderSubmit{
+
+  .orderSubmit {
     background-color: #a52a2a;
     color: white;
     border: 0;
@@ -570,12 +546,12 @@ hr{
     margin-top: 50px;
   }
 
-  #orderDetailsTable td{
+  #orderDetailsTable td {
     width: 50px;
   }
 
-  #orderDetailsTable{
-    width: 260px ;
+  #orderDetailsTable {
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -583,10 +559,18 @@ hr{
     padding: 5px;
     border-radius: 5px;
     margin: 20px 10px 20px 10px;
-    align-items: start; 
+    align-items: start;
   }
+}
 
-    
+.imageContainer {
+  display: flex;
+  justify-content: space-around; /* This will distribute the space evenly around the images */
+  align-items: center; /* This will center the items vertically */
+  gap: 20px; /* Optional: Add some gap between the images */
+}
 
-  }
-
+.imageContainer img {
+  max-width: 100%; /* Ensure images do not overflow the container */
+  height: auto; /* Maintain aspect ratio */
+}
