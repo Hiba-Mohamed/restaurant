@@ -405,6 +405,40 @@ hr{
   width: 350px;
 }
 
+.cancel{
+  width: 100px;
+  height: 30px;
+  color: #a52a2a;
+  font-size: medium;
+  background-color: white;
+  border: #a52a2a;
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.confirm{
+  width: 100px;
+  height: 33px;
+  color: white;
+  font-size: medium;
+  background-color:#a52a2a;
+  border: white;
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.buttonsDiv{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.hidden{
+  display: none;
+}
+
 /* Responsive design  xtablet*/
 @media (min-width: 450px) and (max-width: 768px) {
   .bannerSection h1 {
@@ -583,8 +617,14 @@ hr{
     padding: 5px;
     border-radius: 5px;
     margin: 20px 10px 20px 10px;
-    align-items: start; 
   }
+
+  .buttonsDiv{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
     
 
