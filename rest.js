@@ -113,64 +113,72 @@ const menuPrices =
                                         }
                                 }
                                 console.log(subtotal)
+                                const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
+                                if(subtotal === 0){
+                                    noItemsSelectedErrorParag.innerText = "No items Selected, You have to select one item at least!"
+                                }
+                                else{
+                                    noItemsSelectedErrorParag.innerText = ""
+
+                                    const OrderDetailsTable = document.querySelector('#orderDetailsTable')
+                                    OrderDetailsTable.innerHTML =`<th class="tableHead">
+                                                                    <h4>Your Order Details</h4>
+                                                                  </th>
+                                                                  <div class="custDispDiv">
+                                                                  <tr>
+                                                                    <td class="custDisInfo">${customerName}</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <td class="custDisInfo">${customerCard}</td>
+                                                                  </tr> 
+                                                                  <tr>
+                                                                    <td class="custDisInfo">${customerAddress} </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                  <br/>
+                                                                  </tr>
+                                                                  
+                                                                  </div>`
+                                                                  
+                    
+                                    orderDetails.forEach(element => {
+                                        const output = `
+                                        <tr>
+                                            <td>${element.itemName}</td>
+                                            <td>$${element.itemPrice}</td>
+                                            <td>x${element.itemQuant} </td>
+                                            <td>$${element.totalPrice}</td>
+                                        </tr>`
+                    
+                                        OrderDetailsTable.innerHTML += output
+                                    })
+        
+                                    OrderDetailsTable.innerHTML += `
+                                    <hr/>
+                                    <div class ="calculationDiv">
+                                        <tr>
+                                            <td>Subtotal</td>
+                                            <td>$${subtotal}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Taxes</td>
+                                            <td>$${(subtotal*0.15).toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                            <hr/>
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                            <td>Total</td>
+                                            <td>$${(subtotal* 1.12).toFixed(2)}</td>
+                                        </tr>
+                                        </div>`   
+                                }
             
                                 }
                             }
-            
-                            const OrderDetailsTable = document.querySelector('#orderDetailsTable')
-                            OrderDetailsTable.innerHTML =`<th class="tableHead">
-                                                            <h4>Your Order Details</h4>
-                                                          </th>
-                                                          <div class="custDispDiv">
-                                                          <tr>
-                                                            <td class="custDisInfo">${customerName}</td>
-                                                          </tr>
-                                                          <tr>
-                                                            <td class="custDisInfo">${customerCard}</td>
-                                                          </tr> 
-                                                          <tr>
-                                                            <td class="custDisInfo">${customerAddress} </td>
-                                                          </tr>
-                                                          <tr>
-                                                          <br/>
-                                                          </tr>
-                                                          
-                                                          </div>`
-                                                          
-            
-                            orderDetails.forEach(element => {
-                                const output = `
-                                <tr>
-                                    <td>${element.itemName}</td>
-                                    <td>$${element.itemPrice}</td>
-                                    <td>x${element.itemQuant} </td>
-                                    <td>$${element.totalPrice}</td>
-                                </tr>`
-            
-                                OrderDetailsTable.innerHTML += output
-                            })
-
-                            OrderDetailsTable.innerHTML += `
-                            <hr/>
-                            <div class ="calculationDiv">
-                                <tr>
-                                    <td>Subtotal</td>
-                                    <td>$${subtotal}</td>
-                                </tr>
-                                <tr>
-                                    <td>Taxes</td>
-                                    <td>$${(subtotal*0.15).toFixed(2)}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                    <hr/>
-                                    </td>
-                                </tr>
-                                  <tr>
-                                    <td>Total</td>
-                                    <td>$${(subtotal* 1.12).toFixed(2)}</td>
-                                </tr>
-                                </div>`                            
+                         
             
                     }
                 }
