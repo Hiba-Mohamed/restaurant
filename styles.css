@@ -88,6 +88,29 @@ nav li {
   height: 600px;
 }
 
+.menuMain{
+  background: url("./images/orderBgImg.png")
+  no-repeat center center/cover;
+}
+
+.bannerSectionMenu{
+
+    height: 100px;
+}
+
+.bannerSectionMenu h1 {
+  font-family: fantasy;
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.bannerSectionMenu h1 span{
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
 .bannerSection h1 {
   margin: 0;
   font-size: 3rem;
@@ -605,7 +628,6 @@ hr {
     
 
   }
-
 
 
 .imageContainer {
