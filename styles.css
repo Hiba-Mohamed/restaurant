@@ -565,12 +565,43 @@ hr {
 
 .imageContainer {
   display: flex;
-  justify-content: space-around; /* This will distribute the space evenly around the images */
-  align-items: center; /* This will center the items vertically */
-  gap: 20px; /* Optional: Add some gap between the images */
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
 }
 
 .imageContainer img {
-  max-width: 100%; /* Ensure images do not overflow the container */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  height: auto;
+}
+
+.menuContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.menuBox {
+  flex: 1 1 calc(33% - 20px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menuBox h3 {
+  margin-top: 0;
+  color: #a52a2a;
+}
+
+.menuBox p {
+  margin: 10px 0;
+}
+
+.smalltext {
+  font-size: 15px;
+  color: grey;
 }
