@@ -481,6 +481,30 @@ align-items: center;
   text-decoration: none;
 }
 
+
+.messageToUser{
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
+}
+
+.messageToUser img{
+  width: 30px;
+  padding: 10px;
+}
+
+.messageToUser p{
+  font-size: medium;
+  padding: 10px;
+}
+
 /* Responsive design  xtablet*/
 @media (min-width: 450px) and (max-width: 768px) {
   .bannerSection h1 {
@@ -590,7 +614,6 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
-    margin-bottom: 100px;
   }
 
   .OrderCategory {

@@ -60,19 +60,30 @@ const cardErrorMessage = document.querySelector('#cardErrorMessage');
 const addressErrorMessage = document.querySelector('#addressErrorMessage');
 
     if (customerName === "" ){
-        nameErrorMessage.innerText = 'Full name must NOT be empty'
+        nameErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
+        <p>Full name must NOT be empty</p>`
+        nameErrorMessage.classList.add('messageToUser')
     }
     else{
+        nameErrorMessage.classList.remove('messageToUser')
+
         nameErrorMessage.innerText =""
         if (customerCard === "" ){
-            cardErrorMessage.innerText = 'Card number must NOT be empty'
+            cardErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
+            <p>Card number must NOT be empty</p>`
+            cardErrorMessage.classList.add('messageToUser')
         }
         else{
+            cardErrorMessage.classList.remove('messageToUser')
             cardErrorMessage.innerText =""
             if (customerAddress === ""){
-                addressErrorMessage.innerHTML = 'Address must NOT be empty'
+                addressErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
+                <p>Address must NOT be empty</p>`
+                addressErrorMessage.classList.add('messageToUser')
             }
             else{
+                addressErrorMessage.innerText =""
+                addressErrorMessage.classList.remove('messageToUser')
 
                 //items quantities validation and calculation logic
 
@@ -116,12 +127,13 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                         console.log(subtotal)
                         const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
                         if(subtotal === 0){
-                            noItemsSelectedErrorParag.innerText = "No items Selected, You have to select one item at least!"
+                            noItemsSelectedErrorParag.innerHTML = `<div class = 'messageToUser' ><img src="./images/errorIcon.png" alt="">
+                <p>No items Selected, You have to select one item at least!</p></div>`
                         }
                         else{
                             submitButton.style.display = 'none'
 
-                            noItemsSelectedErrorParag.innerText = ""
+                            noItemsSelectedErrorParag.innerHTML = ""
 
                             OrderDetailsTable.innerHTML =`<th class="tableHead">
                                                             <h4 class = "toHideInRecipt" >Your Order Details</h4>
