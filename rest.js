@@ -123,6 +123,8 @@ else{
                         noItemsSelectedErrorParag.innerText = "No items Selected, You have to select one item at least!"
                     }
                     else{
+                        submitButton.style.display = 'none'
+
                         noItemsSelectedErrorParag.innerText = ""
 
                         const OrderDetailsTable = document.querySelector('#orderDetailsTable')
@@ -201,6 +203,7 @@ function handleConfirm(){
 
 // handle confirmation
 function handleEdit(){
+    submitButton.style.display = 'initial'
     orderDetails=[];
     subtotal = 0;
     console.log(orderDetails)
@@ -213,7 +216,13 @@ function handleEdit(){
 
 // handle cancellation
 function handleCancel(){
-
+    submitButton.style.display = 'initial'
+    orderDetails=[];
+    subtotal = 0;
+    const form = document.querySelector('.orderForm')
+    const orderOutputSection = document.querySelector('.orderOutputSection')
+    form.reset()
+    orderOutputSection.innerHTML = `<p>Your order had been successfully cancelled!</p>`
 }
 
 
