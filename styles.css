@@ -347,7 +347,11 @@ footer p {
 }
 
 #orderDetailsTable {
-  width: 400px;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 10px;
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -364,10 +368,14 @@ table {
   justify-content: start;
 }
 
-
+.itemName{
+ width:200px
+}
 
 #orderDetailsTable td {
-  width: 200px;
+  text-align: start;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 th {
@@ -402,7 +410,7 @@ hr {
   align-items: start;
   flex-direction: row;
   justify-content: space-between;
-  width: 350px;
+  width: 600px;
 }
 
 .calculationDiv tbody tr {
@@ -674,6 +682,10 @@ align-items: center;
   }
 
   #orderDetailsTable {
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
     width: 480px;
     display: flex;
     flex-direction: column;

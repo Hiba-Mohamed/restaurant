@@ -175,7 +175,7 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
 
                                 const output = `
                                 <tr>
-                                    <td>${formattedItemName}</td>
+                                    <td class="itemName">${formattedItemName}</td>
                                     <td>$${element.itemPrice}</td>
                                     <td>x${element.itemQuant} </td>
                                     <td>$${element.totalPrice}</td>
