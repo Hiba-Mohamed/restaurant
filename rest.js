@@ -14,31 +14,31 @@ dropDownDiv.classList.add('dropDownHidden')}
 
 const menuPrices = 
 [
-["hummus", 6.99],
-["ghanoush", 7.49],
+["hummusWithPitaBread", 6.99],
+["babaGanoush", 7.49],
 ["falafel",5.99],
-["dolma",6.49],
+["stuffedGrapeLeavesDolma",6.49],
 ["labneh",5.99],
-["shish",16.99],
-["shawarma",14.99],
-["adana",15.99],
-["kofta",15.49],
-["grill",22.99],
-["moussaka",13.99],
+["lambShishKebab",16.99],
+["chickenShawarma",14.99],
+["adanaKebab",15.99],
+["beefKofta",15.49],
+["mixedGrillPlatter",22.99],
+["vegetarianMoussaka",13.99],
 ["falafelPlate",11.99],
-["peppers",12.99],
-["rice",3.99],
-["bulgur",4.49],
+["stuffedPeppers",12.99],
+["ricePilaf",3.99],
+["bulgurPilaf",4.49],
 ["tabbouleh",4.99],
-["vegGrill",4.99],
+["grilledVegetables",4.99],
 ["baklava",4.99],
 ["kunafa",5.99],
-["delight",3.99],
-["pudding",4.49],
-["coffee",2.99],
-["tea",2.49],
+["turkishDelight",3.99],
+["ricePudding",4.49],
+["turkishCoffee",2.99],
+["mintTea",2.49],
 ["ayran",2.99],
-["juice",3.99],
+["pomegranateJuice",3.99],
 ["softDrink",1.99]
 ]
 
@@ -128,7 +128,7 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                         const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
                         if(subtotal === 0){
                             noItemsSelectedErrorParag.innerHTML = `<div class = 'messageToUser' ><img src="./images/errorIcon.png" alt="">
-                <p>No items Selected, You have to select one item at least!</p></div>`
+                <p>No items Selected, You have to select one item with a quantity of '1'!</p></div>`
                         }
                         else{
                             submitButton.style.display = 'none'
@@ -157,9 +157,25 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                                                             
             
                             orderDetails.forEach(element => {
+                                const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
+                                console.log(itemNameRE.test(element.itemName));
+                                console.log((element.itemName).match(itemNameRE));
+                                const matchedItemName = (element.itemName).match(itemNameRE)
+                                const upperCaseArray = matchedItemName.map(element =>{
+                                    const firstletter = element[0].toUpperCase()
+                                    const remainingChar = element.substring(1, element.length+1)
+                                    element = `${firstletter}${remainingChar}`
+                                    return element
+                                })
+                                console.log(upperCaseArray)
+                                const itemNameStringWithComma = upperCaseArray.join(" ")
+                                const formattedItemName = itemNameStringWithComma.replace(",","")
+
+
+
                                 const output = `
                                 <tr>
-                                    <td>${element.itemName}</td>
+                                    <td>${formattedItemName}</td>
                                     <td>$${element.itemPrice}</td>
                                     <td>x${element.itemQuant} </td>
                                     <td>$${element.totalPrice}</td>
@@ -173,7 +189,7 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                             <div class ="calculationDiv">
                                 <tr>
                                     <td>Subtotal</td>
-                                    <td>$${subtotal}</td>
+                                    <td>$${(subtotal).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                     <td>Taxes</td>
@@ -242,6 +258,9 @@ function handleCancel(){
     form.reset()
     orderOutputSection.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
                 <p>Your order was successfully cancelled!</p></div>`
+                setTimeout(() => {
+                    orderOutputSection.innerHTML = ""
+                }, 3000);
 }
 
 
