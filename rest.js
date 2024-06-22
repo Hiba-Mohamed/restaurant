@@ -128,7 +128,7 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                         const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
                         if(subtotal === 0){
                             noItemsSelectedErrorParag.innerHTML = `<div class = 'messageToUser' ><img src="./images/errorIcon.png" alt="">
-                <p>No items Selected, You have to select one item with a quantity of '1'!</p></div>`
+                <p>No items Selected, You have to select one item with a quantity of at least'1'!</p></div>`
                         }
                         else{
                             submitButton.style.display = 'none'
