@@ -140,19 +140,21 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                                                             <p class = "toHideInRecipt">Please review your order</p>
                                                             </th>
                                                             <div class="custDispDiv">
-                                                            <tr>
-                                                            <td class="custDisInfo">Customer Name:    ${customerName}</td>
-                                                            </tr>
-                                                            <tr>
-                                                            <td class="custDisInfo">Card Number:      ${customerCard}</td>
-                                                            </tr> 
-                                                            <tr>
-                                                            <td class="custDisInfo">Customer Address: ${customerAddress} </td>
-                                                            </tr>
-                                                            <tr>
-                                                            <br/>
-                                                            </tr>
-                                                            
+                                                                <tr class="custDisInfo">
+                                                                    <td ><strong>Customer Name: </strong></td>
+                                                                    <td>${customerName}</td>
+                                                                </tr>
+                                                                <tr class="custDisInfo">
+                                                                    <td><strong>Card Number: </strong></td>
+                                                                    <td>${customerCard}</td>
+                                                                </tr> 
+                                                                <tr class="custDisInfo">
+                                                                    <td><strong>Customer Address: </strong></td>
+                                                                    <td>${customerAddress}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <br>
+                                                                </tr>
                                                             </div>`
                                                             
             
