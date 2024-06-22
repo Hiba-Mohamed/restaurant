@@ -47,6 +47,7 @@ const menuPrices =
 let orderDetails=[];
 let subtotal = 0;
 const OrderDetailsTable = document.querySelector('#orderDetailsTable');
+const orderOutputSection = document.querySelector('.orderOutputSection')
 const submitButton = document.querySelector("#orderSubmit")
 submitButton.addEventListener('click', function(e){
 e.preventDefault();
@@ -57,7 +58,6 @@ const customerAddress = document.querySelector('#customerAddress').value;
 const nameErrorMessage = document.querySelector('#nameErrorMessage');
 const cardErrorMessage = document.querySelector('#cardErrorMessage');
 const addressErrorMessage = document.querySelector('#addressErrorMessage');
-const orderOutputSection = document.querySelector('.orderOutputSection')
 
     if (customerName === "" ){
         nameErrorMessage.innerText = 'Full name must NOT be empty'
@@ -76,7 +76,6 @@ const orderOutputSection = document.querySelector('.orderOutputSection')
 
                 //items quantities validation and calculation logic
 
-                addressErrorMessage.innerText=""
 
                 const priceListLength = menuPrices.length;
                 console.log(priceListLength)
@@ -215,8 +214,7 @@ function handleEdit(){
     subtotal = 0;
     console.log(orderDetails)
     console.log(subtotal)
-    const orderOutputSection = document.querySelector('.orderOutputSection')
-    orderOutputSection.innerHTML = `<p>You can edit you order from the above menu</p>`
+    OrderDetailsTable.innerHTML = `<p>You can edit you order from the above menu</p>`
 }
 
 // handle cancellation
