@@ -209,7 +209,10 @@ function handleConfirm(){
     form.style.display = 'none';
     const clientReciptDiv = document.querySelector('.clientReciptDiv');
     const toHideInRecipt = document.querySelectorAll('.toHideInRecipt');
-    clientReciptDiv.innerHTML += `<h1>Thank you for your order</h1>`
+    clientReciptDiv.innerHTML += `<div class = 'messageToUser' >
+                                    <img src="./images/successIcon.png" alt="">
+                                    <p>Order confirmed! Your meal will be prepared shortly!</p></div>
+                                <h1>Thank you for your order</h1>`
     clientReciptDiv.appendChild(OrderDetailsTable);
     const buttonsDiv = document.querySelector('.buttonsDiv')
     buttonsDiv.style.display = 'none'
@@ -237,7 +240,8 @@ function handleCancel(){
     const form = document.querySelector('.orderForm')
     const orderOutputSection = document.querySelector('.orderOutputSection')
     form.reset()
-    orderOutputSection.innerHTML = `<p>Your order had been successfully cancelled!</p>`
+    orderOutputSection.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
+                <p>Your order was successfully cancelled!</p></div>`
 }
 
 
