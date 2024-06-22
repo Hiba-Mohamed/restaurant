@@ -383,6 +383,13 @@ th {
   font-size: 2rem;
 }
 
+.calc{
+  width: 448px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .custDisInfo {
   width: 300px;
   text-align: start;
@@ -402,7 +409,7 @@ th {
 hr {
   height: 1px;
   color: #00000067;
-  width: 250px;
+  width: 400px;
 }
 
 .custDispDiv tbody tr {

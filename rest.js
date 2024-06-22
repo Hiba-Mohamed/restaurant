@@ -187,20 +187,20 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                             OrderDetailsTable.innerHTML += `
                             <hr/>
                             <div class ="calculationDiv">
-                                <tr>
+                                <tr class = "calc">
                                     <td>Subtotal</td>
                                     <td>$${(subtotal).toFixed(2)}</td>
                                 </tr>
-                                <tr>
+                                <tr class = "calc">
                                     <td>Taxes</td>
                                     <td>$${(subtotal*0.15).toFixed(2)}</td>
                                 </tr>
-                                <tr>
+                                <tr class = "calc">
                                     <td colspan="2">
                                     <hr/>
                                     </td>
                                 </tr>
-                                    <tr>
+                                <tr class = "calc">
                                     <td>Total</td>
                                     <td>$${(subtotal* 1.12).toFixed(2)}</td>
                                 </tr>
