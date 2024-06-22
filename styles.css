@@ -347,7 +347,7 @@ footer p {
 }
 
 #orderDetailsTable {
-  width: 260px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -355,7 +355,6 @@ footer p {
   padding: 5px;
   border-radius: 5px;
   margin: 20px 10px 20px 10px;
-  align-items: start;
 }
 
 table {
@@ -365,10 +364,7 @@ table {
   justify-content: start;
 }
 
-.custInfo p {
-  font-size: small;
-  color: #a52a2a;
-}
+
 
 #orderDetailsTable td {
   width: 200px;
@@ -401,11 +397,19 @@ hr {
   width: 250px;
 }
 
+.custDispDiv tbody tr {
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+}
+
 .calculationDiv tbody tr {
   display: flex;
   align-items: start;
   flex-direction: row;
-  width: 350px;
+  width: 400px;
 }
 
 .cancel{
@@ -415,6 +419,19 @@ hr {
   font-size: medium;
   background-color: white;
   border: #a52a2a;
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.edit{
+  width: 100px;
+  height: 32px;
+  text-align: center;
+  color: white;
+  font-size: medium;
+  background-color: gray;
+  border: white;
   border: 2px solid;
   border-radius: 5px;
   margin: 10px;
@@ -433,10 +450,21 @@ hr {
 }
 
 .buttonsDiv{
-  padding: 20px;
+  width: 450px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.orderOutputSection{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+align-items: center;
+}
+
+
 
 .hidden{
   display: none;
@@ -608,7 +636,7 @@ hr {
   }
 
   #orderDetailsTable {
-    width: 260px;
+    width: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -622,10 +650,9 @@ hr {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-    
+} 
 
   }
 

@@ -42,8 +42,10 @@ const menuPrices =
 ["softDrink",1.99]
 ]
 
-//handle submission 
 
+//handle submission 
+let orderDetails=[];
+let subtotal = 0;
 const submitButton = document.querySelector("#orderSubmit")
 submitButton.addEventListener('click', function(e){
 e.preventDefault();
@@ -54,6 +56,9 @@ const customerAddress = document.querySelector('#customerAddress').value;
 const nameErrorMessage = document.querySelector('#nameErrorMessage');
 const cardErrorMessage = document.querySelector('#cardErrorMessage');
 const addressErrorMessage = document.querySelector('#addressErrorMessage');
+const orderOutputSection = document.querySelector('.orderOutputSection')
+orderOutputSection.innerHTML = ` <table id="orderDetailsTable">
+                                 </table> `
 
 
 
@@ -75,8 +80,7 @@ else{
             //items quantities validation and calculation logic
 
             addressErrorMessage.innerText=""
-            let orderDetails=[];
-            let subtotal = 0;
+
             const priceListLength = menuPrices.length;
             console.log(priceListLength)
             const inputFieldsLength = document.querySelector("#orderForm").elements.length;
@@ -177,8 +181,9 @@ else{
                             </tr>
                             </div>
                             <div class="buttonsDiv">
-                                <button class="cancel">Cancel</button>
-                                <button class="confirm">Confirm</button>
+                                <p class="cancel" onclick="handleCancel()">Cancel</p>
+                                <p class="edit" onclick="handleEdit()">Edit</p>
+                                <p class="confirm" onclick="handleConfirm()">Confirm</p>
                             </div>`   
                     }
                     }
@@ -189,9 +194,28 @@ else{
 })
 
 
-// handel confirmation
+// handle confirmation
+function handleConfirm(){
+
+}
+
+// handle confirmation
+function handleEdit(){
+    orderDetails=[];
+    subtotal = 0;
+    console.log(orderDetails)
+    console.log(subtotal)
+    const orderOutputSection = document.querySelector('.orderOutputSection')
+    orderOutputSection.innerHTML = `<p>You can edit you order from the above menu</p>`
 
 
+}
 
 // handle cancellation
+function handleCancel(){
+
+}
+
+
+
 
