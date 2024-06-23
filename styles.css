@@ -376,19 +376,18 @@ table {
 
 .itemPrice{
   width:70px;
+  text-align: end;
 
 }
 
 .itemQuan{
-  width:70px
-
+  width:70px;
+  text-align: end;
 }
 
 .itemTotalPrice{
   width:70px;
   text-align: end;
-
-
 }
 
 
