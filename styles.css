@@ -249,6 +249,41 @@ footer p {
   border-radius: 5px;
 }
 
+
+#summary{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 70px;
+}
+#summary img{
+  width: 400px;
+}
+
+
+#reviews{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 70px;
+
+}
+#reviews img{
+  width: 400px;
+}
+
+#biography{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 70px;
+
+}
+#biography img{
+  width: 400px;
+}
+
+
 .optionCard {
   padding: 10px;
   display: flex;
@@ -749,6 +784,27 @@ align-items: center;
 }
 
   }
+
+.belowBanner{
+  background: url("./images/orderBgImg.png")
+  no-repeat center center/cover;
+}
+
+.restInfoDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}  
+
+.restInfoDiv img{
+  width: 370px;
+  margin: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
 
 
 .imageContainer {
