@@ -58,6 +58,8 @@ const customerAddress = document.querySelector('#customerAddress').value;
 const nameErrorMessage = document.querySelector('#nameErrorMessage');
 const cardErrorMessage = document.querySelector('#cardErrorMessage');
 const addressErrorMessage = document.querySelector('#addressErrorMessage');
+const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
+
 
     if (customerName === "" ){
         generateErrorForEmptyNameField()
@@ -74,6 +76,8 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
             }
             else{
                 clearAddressErrorDiv()
+
+
 
                 //items quantities validation and calculation logic
 
@@ -114,94 +118,90 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                                 }
                         }
                         console.log(subtotal)
-                        const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
-                        if(subtotal === 0){
-                            noItemsSelectedErrorParag.innerHTML = `<div class = 'messageToUser' ><img src="./images/errorIcon.png" alt="">
-                <p>No items Selected, You have to select one item with a quantity of at least'1'!</p></div>`
-                        }
-                        else{
-                            submitButton.style.display = 'none'
+                         if (validateItemQuantNotAllEmpty())
+                        {
+                                                submitButton.style.display = 'none'
 
-                            noItemsSelectedErrorParag.innerHTML = ""
+                                                noItemsSelectedErrorParag.innerHTML = ""
 
-                            OrderDetailsTable.innerHTML =`<th class="tableHead">
-                                                            <h4 class = "toHideInRecipt" >Your Order Details</h4>
-                                                            <p class = "toHideInRecipt">Please review your order</p>
-                                                            </th>
-                                                            <div class="custDispDiv">
-                                                                <tr class="custDisInfo">
-                                                                    <td ><strong>Customer Name: </strong></td>
-                                                                    <td>${customerName}</td>
-                                                                </tr>
-                                                                <tr class="custDisInfo">
-                                                                    <td><strong>Card Number: </strong></td>
-                                                                    <td>${customerCard}</td>
-                                                                </tr> 
-                                                                <tr class="custDisInfo">
-                                                                    <td><strong>Customer Address: </strong></td>
-                                                                    <td>${customerAddress}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <br>
-                                                                </tr>
-                                                            </div>`
-                                                            
-            
-                            orderDetails.forEach(element => {
-                                const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
-                                console.log(itemNameRE.test(element.itemName));
-                                console.log((element.itemName).match(itemNameRE));
-                                const matchedItemName = (element.itemName).match(itemNameRE)
-                                const upperCaseArray = matchedItemName.map(element =>{
-                                    const firstletter = element[0].toUpperCase()
-                                    const remainingChar = element.substring(1, element.length+1)
-                                    element = `${firstletter}${remainingChar}`
-                                    return element
-                                })
-                                console.log(upperCaseArray)
-                                const itemNameStringWithComma = upperCaseArray.join(" ")
-                                const formattedItemName = itemNameStringWithComma.replace(",","")
+                                                OrderDetailsTable.innerHTML =`<th class="tableHead">
+                                                                                <h4 class = "toHideInRecipt" >Your Order Details</h4>
+                                                                                <p class = "toHideInRecipt">Please review your order</p>
+                                                                                </th>
+                                                                                <div class="custDispDiv">
+                                                                                    <tr class="custDisInfo">
+                                                                                        <td ><strong>Customer Name: </strong></td>
+                                                                                        <td>${customerName}</td>
+                                                                                    </tr>
+                                                                                    <tr class="custDisInfo">
+                                                                                        <td><strong>Card Number: </strong></td>
+                                                                                        <td>${customerCard}</td>
+                                                                                    </tr> 
+                                                                                    <tr class="custDisInfo">
+                                                                                        <td><strong>Customer Address: </strong></td>
+                                                                                        <td>${customerAddress}</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <br>
+                                                                                    </tr>
+                                                                                </div>`
+                                                                                
+                                
+                                                orderDetails.forEach(element => {
+                                                    const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
+                                                    console.log(itemNameRE.test(element.itemName));
+                                                    console.log((element.itemName).match(itemNameRE));
+                                                    const matchedItemName = (element.itemName).match(itemNameRE)
+                                                    const upperCaseArray = matchedItemName.map(element =>{
+                                                        const firstletter = element[0].toUpperCase()
+                                                        const remainingChar = element.substring(1, element.length+1)
+                                                        element = `${firstletter}${remainingChar}`
+                                                        return element
+                                                    })
+                                                    console.log(upperCaseArray)
+                                                    const itemNameStringWithComma = upperCaseArray.join(" ")
+                                                    const formattedItemName = itemNameStringWithComma.replace(",","")
 
 
 
-                                const output = `
-                                <tr>
-                                    <td class="itemName">${formattedItemName}</td>
-                                    <td>$${element.itemPrice}</td>
-                                    <td>x${element.itemQuant} </td>
-                                    <td>$${element.totalPrice}</td>
-                                </tr>`
-            
-                                OrderDetailsTable.innerHTML += output
-                            })
+                                                    const output = `
+                                                    <tr>
+                                                        <td class="itemName">${formattedItemName}</td>
+                                                        <td>$${element.itemPrice}</td>
+                                                        <td>x${element.itemQuant} </td>
+                                                        <td>$${element.totalPrice}</td>
+                                                    </tr>`
+                                
+                                                    OrderDetailsTable.innerHTML += output
+                                                })
 
-                            OrderDetailsTable.innerHTML += `
-                            <hr/>
-                            <div class ="calculationDiv">
-                                <tr class = "calc">
-                                    <td>Subtotal</td>
-                                    <td>$${(subtotal).toFixed(2)}</td>
-                                </tr>
-                                <tr class = "calc">
-                                    <td>Taxes</td>
-                                    <td>$${(subtotal*0.15).toFixed(2)}</td>
-                                </tr>
-                                <tr class = "calc">
-                                    <td colspan="2">
-                                    <hr/>
-                                    </td>
-                                </tr>
-                                <tr class = "calc">
-                                    <td>Total</td>
-                                    <td>$${(subtotal* 1.12).toFixed(2)}</td>
-                                </tr>
-                                </div>
-                                <div class="buttonsDiv">
-                                    <p class="cancel" onclick="handleCancel()">Cancel</p>
-                                    <p class="edit" onclick="handleEdit()">Edit</p>
-                                    <p class="confirm" onclick="handleConfirm()">Confirm</p>
-                                </div>`   
-                        }
+                                                OrderDetailsTable.innerHTML += `
+                                                <hr/>
+                                                <div class ="calculationDiv">
+                                                    <tr class = "calc">
+                                                        <td>Subtotal</td>
+                                                        <td>$${(subtotal).toFixed(2)}</td>
+                                                    </tr>
+                                                    <tr class = "calc">
+                                                        <td>Taxes</td>
+                                                        <td>$${(subtotal*0.15).toFixed(2)}</td>
+                                                    </tr>
+                                                    <tr class = "calc">
+                                                        <td colspan="2">
+                                                        <hr/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class = "calc">
+                                                        <td>Total</td>
+                                                        <td>$${(subtotal* 1.12).toFixed(2)}</td>
+                                                    </tr>
+                                                    </div>
+                                                    <div class="buttonsDiv">
+                                                        <p class="cancel" onclick="handleCancel()">Cancel</p>
+                                                        <p class="edit" onclick="handleEdit()">Edit</p>
+                                                        <p class="confirm" onclick="handleConfirm()">Confirm</p>
+                                                    </div>`   
+                                            }
                         }
                     }
             }
@@ -241,6 +241,19 @@ function generateErrorForEmptyAddressField(){
 function clearAddressErrorDiv(){
     addressErrorMessage.innerText =""
     addressErrorMessage.classList.remove('messageToUser')
+}
+
+
+function validateItemQuantNotAllEmpty(){
+    if(subtotal === 0){
+        noItemsSelectedErrorParag.innerHTML = `
+                            <div class = 'messageToUser' >
+                                <img src="./images/errorIcon.png" alt="">
+                                <p>No items Selected, You have to select one item with a quantity of at least'1'!</p>
+                            </div>`
+                            return false
+    }
+    else return true
 }
 
 
