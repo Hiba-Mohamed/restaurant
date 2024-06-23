@@ -370,14 +370,27 @@ table {
 }
 
 .itemName{
- width:200px
+ width:200px;
+ text-align: start;
 }
 
-#orderDetailsTable td {
-  text-align: start;
-  padding-left: 20px;
-  padding-right: 20px;
+.itemPrice{
+  width:70px;
+
 }
+
+.itemQuan{
+  width:70px
+
+}
+
+.itemTotalPrice{
+  width:70px;
+  text-align: end;
+
+
+}
+
 
 th {
   font-weight: bolder;
@@ -385,7 +398,7 @@ th {
 }
 
 .calc{
-  width: 448px;
+  width: 428px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -395,20 +408,15 @@ th {
   display: flex;
   flex-direction: row;
   width: 430px;
+  justify-content: center;
+  align-items: center;
   text-align: start;
 }
 
 .custDisInfo td{
   width: 200px;
-
 }
 
-.custDispDiv {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-content: start;
-}
 
 .tableHead{
   width: 480px;
@@ -428,13 +436,6 @@ hr {
   width: 400px;
 }
 
-.custDispDiv tbody tr {
-  display: flex;
-  align-items: start;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 600px;
-}
 
 .calculationDiv tbody tr {
   display: flex;
@@ -540,6 +541,14 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.orderDateTime{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 /* Responsive design  xtablet*/
@@ -703,7 +712,7 @@ align-items: center;
   }
 
   #orderDetailsTable td {
-    width: 50px;
+    width: 140px;
   }
 
   #orderDetailsTable {
@@ -728,6 +737,18 @@ align-items: center;
     align-items: center;
     justify-content: center;
 } 
+
+.custDisInfo {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.custDisInfo td{
+  width: 200px;
+}
 
   }
 

@@ -97,8 +97,6 @@ const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError'
          
     
 
-
-
 function generateErrorForEmptyNameField(){
     nameErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
     <p>Full name must NOT be empty</p>`
@@ -190,89 +188,111 @@ function validateItemQuantitiesAndCalculateSubtotal(){
         }}
 
 
-        function generateClientReceipt(){
-            submitButton.style.display = 'none'
+function generateClientReceipt(){
 
-            noItemsSelectedErrorParag.innerHTML = ""
+    const date = new Date();
+    console.log(date)
+    const orderDay = date.getDate();
+    const orderMonth = date.getMonth();
+    const orderYear = date.getFullYear();
+    const orderHour = date.getHours();
+    const orderMinutes = date.getMinutes();
+    const orderSeconds = date.getSeconds();
+    console.log(orderHour)
 
-            OrderDetailsTable.innerHTML =`<th class="tableHead">
-                                            <h4 class = "toHideInRecipt" >Your Order Details</h4>
-                                            <p class = "toHideInRecipt">Please review your order</p>
-                                            </th>
-                                            <div class="custDispDiv">
-                                                <tr class="custDisInfo">
-                                                    <td ><strong>Customer Name: </strong></td>
-                                                    <td>${customerName}</td>
-                                                </tr>
-                                                <tr class="custDisInfo">
-                                                    <td><strong>Card Number: </strong></td>
-                                                    <td>${customerCard}</td>
-                                                </tr> 
-                                                <tr class="custDisInfo">
-                                                    <td><strong>Customer Address: </strong></td>
-                                                    <td>${customerAddress}</td>
-                                                </tr>
-                                                <tr>
-                                                    <br>
-                                                </tr>
-                                            </div>`
-                                            
-
-            orderDetails.forEach(element => {
-                const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
-                console.log(itemNameRE.test(element.itemName));
-                console.log((element.itemName).match(itemNameRE));
-                const matchedItemName = (element.itemName).match(itemNameRE)
-                const upperCaseArray = matchedItemName.map(element =>{
-                    const firstletter = element[0].toUpperCase()
-                    const remainingChar = element.substring(1, element.length+1)
-                    element = `${firstletter}${remainingChar}`
-                    return element
-                })
-                console.log(upperCaseArray)
-                const itemNameStringWithComma = upperCaseArray.join(" ")
-                const formattedItemName = itemNameStringWithComma.replace(",","")
+    const orderDate = `${orderDay}-${orderMonth}-${orderYear}`
+    const orderTime = `${orderHour}:${orderMinutes}:${orderSeconds}`
+    console.log(orderDate)
+    console.log(orderTime)
 
 
+    // const orderDate = date.today()
 
-                const output = `
-                <tr>
-                    <td class="itemName">${formattedItemName}</td>
-                    <td>$${element.itemPrice}</td>
-                    <td>x${element.itemQuant} </td>
-                    <td>$${element.totalPrice}</td>
-                </tr>`
+    submitButton.style.display = 'none'
 
-                OrderDetailsTable.innerHTML += output
-            })
+    noItemsSelectedErrorParag.innerHTML = ""
 
-            OrderDetailsTable.innerHTML += `
+    OrderDetailsTable.innerHTML =`<th class="tableHead">
+                                    <h4 class = "toHideInRecipt" >Your Order Details</h4>
+                                    <p class = "toHideInRecipt">Please review your order</p>
+                                    </th>
+                                    <tr class="orderDateTime">
+                                        <td><strong>Order Date: </strong>${orderDate}</td>
+                                        <td><strong>Order Time: </strong>${orderTime}</td>
+                                    </tr>
+                                    <tr class="custDisInfo">
+                                        <td ><strong>Customer Name: </strong></td>
+                                        <td>${customerName}</td>
+                                    </tr>
+                                    <tr class="custDisInfo">
+                                        <td><strong>Card Number: </strong></td>
+                                        <td>${customerCard}</td>
+                                    </tr> 
+                                    <tr class="custDisInfo">
+                                        <td><strong>Customer Address: </strong></td>
+                                        <td>${customerAddress}</td>
+                                    </tr>
+                                    <tr>
+                                        <br>
+                                    </tr>
+                                    `
+                                    
+
+    orderDetails.forEach(element => {
+        const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
+        console.log(itemNameRE.test(element.itemName));
+        console.log((element.itemName).match(itemNameRE));
+        const matchedItemName = (element.itemName).match(itemNameRE)
+        const upperCaseArray = matchedItemName.map(element =>{
+            const firstletter = element[0].toUpperCase()
+            const remainingChar = element.substring(1, element.length+1)
+            element = `${firstletter}${remainingChar}`
+            return element
+        })
+        console.log(upperCaseArray)
+        const itemNameStringWithComma = upperCaseArray.join(" ")
+        const formattedItemName = itemNameStringWithComma.replace(",","")
+
+
+
+        const output = `
+        <tr>
+            <td class="itemName">${formattedItemName}</td>
+            <td class="itemPrice">$${element.itemPrice}</td>
+            <td class="itemQuan">x${element.itemQuant} </td>
+            <td class="itemTotalPrice">$${element.totalPrice}</td>
+        </tr>`
+
+        OrderDetailsTable.innerHTML += output
+    })
+
+    OrderDetailsTable.innerHTML += `
+    <hr/>
+    <div class ="calculationDiv">
+        <tr class = "calc">
+            <td>Subtotal</td>
+            <td>$${(subtotal).toFixed(2)}</td>
+        </tr>
+        <tr class = "calc">
+            <td>Taxes</td>
+            <td>$${(subtotal*0.15).toFixed(2)}</td>
+        </tr>
+        <tr class = "calc">
+            <td colspan="2">
             <hr/>
-            <div class ="calculationDiv">
-                <tr class = "calc">
-                    <td>Subtotal</td>
-                    <td>$${(subtotal).toFixed(2)}</td>
-                </tr>
-                <tr class = "calc">
-                    <td>Taxes</td>
-                    <td>$${(subtotal*0.15).toFixed(2)}</td>
-                </tr>
-                <tr class = "calc">
-                    <td colspan="2">
-                    <hr/>
-                    </td>
-                </tr>
-                <tr class = "calc">
-                    <td>Total</td>
-                    <td>$${(subtotal* 1.12).toFixed(2)}</td>
-                </tr>
-                </div>
-                <div class="buttonsDiv">
-                    <p class="cancel" onclick="handleCancel()">Cancel</p>
-                    <p class="edit" onclick="handleEdit()">Edit</p>
-                    <p class="confirm" onclick="handleConfirm()">Confirm</p>
-                </div>`   
-            }
+            </td>
+        </tr>
+        <tr class = "calc">
+            <td>Total</td>
+            <td>$${(subtotal* 1.12).toFixed(2)}</td>
+        </tr>
+        </div>
+        <div class="buttonsDiv">
+            <p class="cancel" onclick="handleCancel()">Cancel</p>
+            <p class="edit" onclick="handleEdit()">Edit</p>
+            <p class="confirm" onclick="handleConfirm()">Confirm</p>
+        </div>`   
+    }
 
 
 
