@@ -61,152 +61,41 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
 const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError')
 
 
-    if (customerName === "" ){
+    if (customerName === "" )
+    {
         generateErrorForEmptyNameField()
     }
-    else{
+
+    else
+    {
         clearNameErrorDiv()
-        if (customerCard === "" ){
+        if (customerCard === "" )
+        {
             generateErrorForEmptyCardField()
         }
-        else{
+
+        else
+        {
             clearCardErrorDiv()
-            if (customerAddress === ""){
+            if (customerAddress === "")
+            {
                 generateErrorForEmptyAddressField()
             }
-            else{
+
+            else
+            {
                 clearAddressErrorDiv()
+                validateItemQuantitiesAndCalculateSubtotal()
 
-
-
-                //items quantities validation and calculation logic
-
-                const priceListLength = menuPrices.length;
-                console.log(priceListLength)
-                const inputFieldsLength = document.querySelector("#orderForm").elements.length;
-                console.log(inputFieldsLength)
-                for (var i=0; i < inputFieldsLength-3; i++)
-                    {
-                        if(document.querySelector("#orderForm").elements[i].value !== "" 
-                        && parseInt(document.querySelector("#orderForm").elements[i].value) !== 0)
-                        {
-                            const itemName = document.querySelector("#orderForm").elements[i].name;
-                            const itemQuant = document.querySelector("#orderForm").elements[i].value;
-                            try {
-                                parseInt(itemQuant)
-                            } 
-                            catch (error) {
-                                console.log(error)
-                                const errorMessage = document.createElement('p');
-                                errorMessage.innerText = 'please enter a valid quantity number';
-                                const itemDiv = document.querySelector('.qaunInput')[i];
-
-                                itemDiv.appendChild(errorMessage)
-                            }
-                            console.log(itemName)
-                            console.log(itemQuant)
-                        
-                            for (var j = 0; j < priceListLength; j++) {
-                            if (menuPrices[j][0] === itemName)
-                                {
-                                const itemPrice =  menuPrices[j][1];
-                                console.log(itemPrice)
-                                const totalPrice = itemPrice * itemQuant
-                                subtotal += totalPrice
-                                orderDetails.push({itemName,itemQuant,itemPrice,totalPrice})
-                                console.log(orderDetails)
-                                }
-                        }
-                        console.log(subtotal)
-                         if (validateItemQuantNotAllEmpty())
-                        {
-                                                submitButton.style.display = 'none'
-
-                                                noItemsSelectedErrorParag.innerHTML = ""
-
-                                                OrderDetailsTable.innerHTML =`<th class="tableHead">
-                                                                                <h4 class = "toHideInRecipt" >Your Order Details</h4>
-                                                                                <p class = "toHideInRecipt">Please review your order</p>
-                                                                                </th>
-                                                                                <div class="custDispDiv">
-                                                                                    <tr class="custDisInfo">
-                                                                                        <td ><strong>Customer Name: </strong></td>
-                                                                                        <td>${customerName}</td>
-                                                                                    </tr>
-                                                                                    <tr class="custDisInfo">
-                                                                                        <td><strong>Card Number: </strong></td>
-                                                                                        <td>${customerCard}</td>
-                                                                                    </tr> 
-                                                                                    <tr class="custDisInfo">
-                                                                                        <td><strong>Customer Address: </strong></td>
-                                                                                        <td>${customerAddress}</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <br>
-                                                                                    </tr>
-                                                                                </div>`
-                                                                                
-                                
-                                                orderDetails.forEach(element => {
-                                                    const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
-                                                    console.log(itemNameRE.test(element.itemName));
-                                                    console.log((element.itemName).match(itemNameRE));
-                                                    const matchedItemName = (element.itemName).match(itemNameRE)
-                                                    const upperCaseArray = matchedItemName.map(element =>{
-                                                        const firstletter = element[0].toUpperCase()
-                                                        const remainingChar = element.substring(1, element.length+1)
-                                                        element = `${firstletter}${remainingChar}`
-                                                        return element
-                                                    })
-                                                    console.log(upperCaseArray)
-                                                    const itemNameStringWithComma = upperCaseArray.join(" ")
-                                                    const formattedItemName = itemNameStringWithComma.replace(",","")
-
-
-
-                                                    const output = `
-                                                    <tr>
-                                                        <td class="itemName">${formattedItemName}</td>
-                                                        <td>$${element.itemPrice}</td>
-                                                        <td>x${element.itemQuant} </td>
-                                                        <td>$${element.totalPrice}</td>
-                                                    </tr>`
-                                
-                                                    OrderDetailsTable.innerHTML += output
-                                                })
-
-                                                OrderDetailsTable.innerHTML += `
-                                                <hr/>
-                                                <div class ="calculationDiv">
-                                                    <tr class = "calc">
-                                                        <td>Subtotal</td>
-                                                        <td>$${(subtotal).toFixed(2)}</td>
-                                                    </tr>
-                                                    <tr class = "calc">
-                                                        <td>Taxes</td>
-                                                        <td>$${(subtotal*0.15).toFixed(2)}</td>
-                                                    </tr>
-                                                    <tr class = "calc">
-                                                        <td colspan="2">
-                                                        <hr/>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class = "calc">
-                                                        <td>Total</td>
-                                                        <td>$${(subtotal* 1.12).toFixed(2)}</td>
-                                                    </tr>
-                                                    </div>
-                                                    <div class="buttonsDiv">
-                                                        <p class="cancel" onclick="handleCancel()">Cancel</p>
-                                                        <p class="edit" onclick="handleEdit()">Edit</p>
-                                                        <p class="confirm" onclick="handleConfirm()">Confirm</p>
-                                                    </div>`   
-                                            }
-                        }
-                    }
+                if (validateItemQuantNotAllEmpty())
+                {
+                    generateClientReceipt()
+                }
             }
-        }  
+        }
     }
+         
+    
 
 
 
@@ -256,6 +145,135 @@ function validateItemQuantNotAllEmpty(){
     else return true
 }
 
+function validateItemQuantitiesAndCalculateSubtotal(){
+    //items quantities validation and calculation logic
+
+    const priceListLength = menuPrices.length;
+    console.log(priceListLength)
+    const inputFieldsLength = document.querySelector("#orderForm").elements.length;
+    console.log(inputFieldsLength)
+    for (var i=0; i < inputFieldsLength-3; i++)
+        {
+            if(document.querySelector("#orderForm").elements[i].value !== "" 
+            && parseInt(document.querySelector("#orderForm").elements[i].value) !== 0)
+            {
+                const itemName = document.querySelector("#orderForm").elements[i].name;
+                const itemQuant = document.querySelector("#orderForm").elements[i].value;
+                try {
+                    parseInt(itemQuant)
+                } 
+                catch (error) {
+                    console.log(error)
+                    const errorMessage = document.createElement('p');
+                    errorMessage.innerText = 'please enter a valid quantity number';
+                    const itemDiv = document.querySelector('.qaunInput')[i];
+
+                    itemDiv.appendChild(errorMessage)
+                }
+                console.log(itemName)
+                console.log(itemQuant)
+            
+                for (var j = 0; j < priceListLength; j++) 
+                {
+                    if (menuPrices[j][0] === itemName)
+                        {
+                        const itemPrice =  menuPrices[j][1];
+                        console.log(itemPrice)
+                        const totalPrice = itemPrice * itemQuant
+                        subtotal += totalPrice
+                        orderDetails.push({itemName,itemQuant,itemPrice,totalPrice})
+                        console.log(orderDetails)
+                        }
+                }
+            console.log(subtotal)
+            }
+        }}
+
+
+        function generateClientReceipt(){
+            submitButton.style.display = 'none'
+
+            noItemsSelectedErrorParag.innerHTML = ""
+
+            OrderDetailsTable.innerHTML =`<th class="tableHead">
+                                            <h4 class = "toHideInRecipt" >Your Order Details</h4>
+                                            <p class = "toHideInRecipt">Please review your order</p>
+                                            </th>
+                                            <div class="custDispDiv">
+                                                <tr class="custDisInfo">
+                                                    <td ><strong>Customer Name: </strong></td>
+                                                    <td>${customerName}</td>
+                                                </tr>
+                                                <tr class="custDisInfo">
+                                                    <td><strong>Card Number: </strong></td>
+                                                    <td>${customerCard}</td>
+                                                </tr> 
+                                                <tr class="custDisInfo">
+                                                    <td><strong>Customer Address: </strong></td>
+                                                    <td>${customerAddress}</td>
+                                                </tr>
+                                                <tr>
+                                                    <br>
+                                                </tr>
+                                            </div>`
+                                            
+
+            orderDetails.forEach(element => {
+                const itemNameRE = /([a-z]+|[A-Z][a-z]*)/g;
+                console.log(itemNameRE.test(element.itemName));
+                console.log((element.itemName).match(itemNameRE));
+                const matchedItemName = (element.itemName).match(itemNameRE)
+                const upperCaseArray = matchedItemName.map(element =>{
+                    const firstletter = element[0].toUpperCase()
+                    const remainingChar = element.substring(1, element.length+1)
+                    element = `${firstletter}${remainingChar}`
+                    return element
+                })
+                console.log(upperCaseArray)
+                const itemNameStringWithComma = upperCaseArray.join(" ")
+                const formattedItemName = itemNameStringWithComma.replace(",","")
+
+
+
+                const output = `
+                <tr>
+                    <td class="itemName">${formattedItemName}</td>
+                    <td>$${element.itemPrice}</td>
+                    <td>x${element.itemQuant} </td>
+                    <td>$${element.totalPrice}</td>
+                </tr>`
+
+                OrderDetailsTable.innerHTML += output
+            })
+
+            OrderDetailsTable.innerHTML += `
+            <hr/>
+            <div class ="calculationDiv">
+                <tr class = "calc">
+                    <td>Subtotal</td>
+                    <td>$${(subtotal).toFixed(2)}</td>
+                </tr>
+                <tr class = "calc">
+                    <td>Taxes</td>
+                    <td>$${(subtotal*0.15).toFixed(2)}</td>
+                </tr>
+                <tr class = "calc">
+                    <td colspan="2">
+                    <hr/>
+                    </td>
+                </tr>
+                <tr class = "calc">
+                    <td>Total</td>
+                    <td>$${(subtotal* 1.12).toFixed(2)}</td>
+                </tr>
+                </div>
+                <div class="buttonsDiv">
+                    <p class="cancel" onclick="handleCancel()">Cancel</p>
+                    <p class="edit" onclick="handleEdit()">Edit</p>
+                    <p class="confirm" onclick="handleConfirm()">Confirm</p>
+                </div>`   
+            }
+
 
 
 })
@@ -304,7 +322,3 @@ function handleCancel(){
                     orderOutputSection.innerHTML = ""
                 }, 3000);
 }
-
-
-
-
