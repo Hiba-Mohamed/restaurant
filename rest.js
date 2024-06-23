@@ -60,33 +60,22 @@ const cardErrorMessage = document.querySelector('#cardErrorMessage');
 const addressErrorMessage = document.querySelector('#addressErrorMessage');
 
     if (customerName === "" ){
-        nameErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
-        <p>Full name must NOT be empty</p>`
-        nameErrorMessage.classList.add('messageToUser')
+        generateErrorForEmptyNameField()
     }
     else{
-        nameErrorMessage.classList.remove('messageToUser')
-
-        nameErrorMessage.innerText =""
+        clearNameErrorDiv()
         if (customerCard === "" ){
-            cardErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
-            <p>Card number must NOT be empty</p>`
-            cardErrorMessage.classList.add('messageToUser')
+            generateErrorForEmptyCardField()
         }
         else{
-            cardErrorMessage.classList.remove('messageToUser')
-            cardErrorMessage.innerText =""
+            clearCardErrorDiv()
             if (customerAddress === ""){
-                addressErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
-                <p>Address must NOT be empty</p>`
-                addressErrorMessage.classList.add('messageToUser')
+                generateErrorForEmptyAddressField()
             }
             else{
-                addressErrorMessage.innerText =""
-                addressErrorMessage.classList.remove('messageToUser')
+                clearAddressErrorDiv()
 
                 //items quantities validation and calculation logic
-
 
                 const priceListLength = menuPrices.length;
                 console.log(priceListLength)
@@ -95,7 +84,7 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
                 for (var i=0; i < inputFieldsLength-3; i++)
                     {
                         if(document.querySelector("#orderForm").elements[i].value !== "" 
-                        && document.querySelector("#orderForm").elements[i].value !== 0)
+                        && parseInt(document.querySelector("#orderForm").elements[i].value) !== 0)
                         {
                             const itemName = document.querySelector("#orderForm").elements[i].name;
                             const itemQuant = document.querySelector("#orderForm").elements[i].value;
@@ -218,6 +207,44 @@ const addressErrorMessage = document.querySelector('#addressErrorMessage');
             }
         }  
     }
+
+
+
+function generateErrorForEmptyNameField(){
+    nameErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
+    <p>Full name must NOT be empty</p>`
+    nameErrorMessage.classList.add('messageToUser')
+}
+
+function clearNameErrorDiv(){
+    nameErrorMessage.classList.remove('messageToUser')
+    nameErrorMessage.innerText =""
+}
+
+function generateErrorForEmptyCardField(){
+    cardErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
+    <p>Card number must NOT be empty</p>`
+    cardErrorMessage.classList.add('messageToUser')
+}
+
+function clearCardErrorDiv(){
+    cardErrorMessage.classList.remove('messageToUser')
+    cardErrorMessage.innerText =""
+}
+
+function generateErrorForEmptyAddressField(){
+    addressErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
+    <p>Address must NOT be empty</p>`
+    addressErrorMessage.classList.add('messageToUser')
+}
+
+function clearAddressErrorDiv(){
+    addressErrorMessage.innerText =""
+    addressErrorMessage.classList.remove('messageToUser')
+}
+
+
+
 })
 
 
