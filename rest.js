@@ -52,6 +52,8 @@ const submitButton = document.querySelector("#orderSubmit")
 submitButton.addEventListener('click', function(e){
 e.preventDefault();
 
+
+
 const customerName = document.querySelector('#customerName').value;
 const customerCard = document.querySelector('#customerCard').value;
 const customerAddress = document.querySelector('#customerAddress').value;
@@ -89,6 +91,7 @@ const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError'
 
                 if (validateItemQuantNotAllEmpty())
                 {
+
                     generateClientReceipt()
                 }
             }
@@ -189,6 +192,7 @@ function validateItemQuantitiesAndCalculateSubtotal(){
 
 
 function generateClientReceipt(){
+
 
     const date = new Date();
     console.log(date)
@@ -335,11 +339,11 @@ function handleCancel(){
     orderDetails=[];
     subtotal = 0;
     const form = document.querySelector('.orderForm')
-    const orderOutputSection = document.querySelector('.orderOutputSection')
     form.reset()
-    orderOutputSection.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
+    OrderDetailsTable.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
                 <p>Your order was successfully cancelled!</p></div>`
                 setTimeout(() => {
-                    orderOutputSection.innerHTML = ""
+                    OrderDetailsTable.innerHTML = `<table id="orderDetailsTable" >
+                    </table>`
                 }, 3000);
 }
