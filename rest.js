@@ -305,15 +305,16 @@ function handleConfirm(){
     form.style.display = 'none';
     const clientReciptDiv = document.querySelector('.clientReciptDiv');
     const toHideInRecipt = document.querySelectorAll('.toHideInRecipt');
-    clientReciptDiv.innerHTML += `<div class = 'messageToUser' >
-                                    <img src="./images/successIcon.png" alt="">
-                                    <p>Order confirmed! Your meal will be prepared shortly!</p></div>
-                                <h1>Thank you for your order</h1>`
+    clientReciptDiv.innerHTML += `<h1>Thank you for your order!</h1> `
     clientReciptDiv.appendChild(OrderDetailsTable);
     const buttonsDiv = document.querySelector('.buttonsDiv')
     buttonsDiv.style.display = 'none'
     toHideInRecipt.forEach(element => element.style.display = 'none')
-    OrderDetailsTable.innerHTML += ` <a class="anotherOrder" href="order.html">Place Another Order</a>
+    OrderDetailsTable.innerHTML += `<div class = 'messageToUser' >
+                                    <img src="./images/successIcon.png" alt="">
+                                    <p>Order confirmed! Your meal will be prepared shortly!</p>
+                                    </div>
+                                <a class="anotherOrder" href="order.html">Place Another Order</a>
 `
     
 }
