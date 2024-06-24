@@ -294,9 +294,9 @@ function generateClientReceipt(){
         </tr>
         </div>
         <div class="buttonsDiv">
-            <p class="cancel" onclick="handleCancel()">Cancel</p>
-            <p class="edit" onclick="handleEdit()">Edit</p>
-            <p class="confirm" onclick="handleConfirm()">Confirm</p>
+            <button class="cancel" onclick="handleCancel()">Cancel</button>
+            <button class="edit" onclick="handleEdit()">Edit</button>
+            <button class="confirm" onclick="handleConfirm()">Confirm</button>
         </div>`   
     }
 
