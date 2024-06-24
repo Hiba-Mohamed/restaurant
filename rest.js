@@ -236,7 +236,7 @@ function validateItemQuantitiesAndCalculateSubtotal()
                         noItemsSelectedErrorParag.innerHTML = `
                                             <div class = 'messageToUser' >
                                                 <img src="./images/errorIcon.png" alt="">
-                                                <p>No items Selected, You have to select one item with a quantity of at least'1'!</p>
+                                                <p>No items Selected, You have to select one item with a quantity of at least '1' !</p>
                                             </div>`
                                             return false
                     }
