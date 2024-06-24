@@ -87,18 +87,45 @@ const noItemsSelectedErrorParag = document.querySelector('.noItemsSelectedError'
             else
             {
                 clearAddressErrorDiv()
-                validateItemQuantitiesAndCalculateSubtotal()
+                
 
-                if (validateItemQuantNotAllEmpty())
+                if (validateItemQuantitiesAndCalculateSubtotal())
                 {
+                        generateClientReceipt()
 
-                    generateClientReceipt()
                 }
             }
         }
     }
          
-    
+
+function isOnlyDigits(string) {
+    const stringArray = string.split("")
+    let resultArray =[];
+        stringArray.forEach
+        (element => 
+            {
+                if(element !== '0' && element !== '1'&& element !== '2'&& element !== '3'&& element !== '4'&& element !== '5'&& element !== '6'&& element !== '7'&& element !== '8' && element !== '9')
+                    {
+                        resultArray.push(false)
+                    }
+                else
+                    {
+                        resultArray.push(true)
+                    }
+            }
+        )
+    console.log(resultArray)
+    if (resultArray.some(element => element === false)){
+        return false
+    }
+    else
+    return true
+}   
+
+
+
+
 
 function generateErrorForEmptyNameField(){
     nameErrorMessage.innerHTML = `<img src="./images/errorIcon.png" alt="">
@@ -134,61 +161,90 @@ function clearAddressErrorDiv(){
 }
 
 
-function validateItemQuantNotAllEmpty(){
-    if(subtotal === 0){
-        noItemsSelectedErrorParag.innerHTML = `
-                            <div class = 'messageToUser' >
-                                <img src="./images/errorIcon.png" alt="">
-                                <p>No items Selected, You have to select one item with a quantity of at least'1'!</p>
-                            </div>`
-                            return false
-    }
-    else return true
-}
+// function validateItemQuantNotAllEmpty(){
+//     if(subtotal === 0){
+//         noItemsSelectedErrorParag.innerHTML = `
+//                             <div class = 'messageToUser' >
+//                                 <img src="./images/errorIcon.png" alt="">
+//                                 <p>No items Selected, You have to select one item with a quantity of at least'1'!</p>
+//                             </div>`
+//                             return false
+//     }
+//     else return true
+// }
 
-function validateItemQuantitiesAndCalculateSubtotal(){
+function validateItemQuantitiesAndCalculateSubtotal()
+{
     //items quantities validation and calculation logic
 
     const priceListLength = menuPrices.length;
     console.log(priceListLength)
     const inputFieldsLength = document.querySelector("#orderForm").elements.length;
     console.log(inputFieldsLength)
-    for (var i=0; i < inputFieldsLength-3; i++)
+    let validationArrayOnlyDigits =[];
+
+    for (var i=0; i < inputFieldsLength-4; i++){
+        if(document.querySelector("#orderForm").elements[i].value !== "" 
+        && parseInt(document.querySelector("#orderForm").elements[i].value) !== 0){
+            console.log(document.querySelector("#orderForm").elements[i].value)
+        const singleValidation = isOnlyDigits(document.querySelector("#orderForm").elements[i].value)
+        validationArrayOnlyDigits.push(singleValidation)
+        }
+
+        console.log(validationArrayOnlyDigits) 
+    }
+    if (validationArrayOnlyDigits.some(element => element === false))
+    {
+        noItemsSelectedErrorParag.innerHTML = `
+        <div class = 'messageToUser' >
+            <img src="./images/errorIcon.png" alt="">
+            <p>Please ensure you only type digits, no other characters allowed!</p>
+        </div>`   
+    }
+
+    else
+    {
+
+        for (var i=0; i < inputFieldsLength-3; i++)
         {
             if(document.querySelector("#orderForm").elements[i].value !== "" 
             && parseInt(document.querySelector("#orderForm").elements[i].value) !== 0)
             {
-                const itemName = document.querySelector("#orderForm").elements[i].name;
-                const itemQuant = document.querySelector("#orderForm").elements[i].value;
-                try {
-                    parseInt(itemQuant)
-                } 
-                catch (error) {
-                    console.log(error)
-                    const errorMessage = document.createElement('p');
-                    errorMessage.innerText = 'please enter a valid quantity number';
-                    const itemDiv = document.querySelector('.qaunInput')[i];
-
-                    itemDiv.appendChild(errorMessage)
-                }
-                console.log(itemName)
-                console.log(itemQuant)
             
-                for (var j = 0; j < priceListLength; j++) 
-                {
-                    if (menuPrices[j][0] === itemName)
-                        {
-                        const itemPrice =  menuPrices[j][1];
-                        console.log(itemPrice)
-                        const totalPrice = itemPrice * itemQuant
-                        subtotal += totalPrice
-                        orderDetails.push({itemName,itemQuant,itemPrice,totalPrice})
-                        console.log(orderDetails)
-                        }
-                }
-            console.log(subtotal)
+
+                    const itemName = document.querySelector("#orderForm").elements[i].name;
+                    const itemQuant = document.querySelector("#orderForm").elements[i].value;
+                    parseInt(itemQuant)
+                    console.log(itemName)
+                    console.log(itemQuant)
+                
+                    for (var j = 0; j < priceListLength; j++) 
+                    {
+                        if (menuPrices[j][0] === itemName)
+                            {
+                                const itemPrice =  menuPrices[j][1];
+                                console.log(itemPrice)
+                                const totalPrice = itemPrice * itemQuant
+                                subtotal += totalPrice
+                                orderDetails.push({itemName,itemQuant,itemPrice,totalPrice})
+                                console.log(orderDetails)
+                            }
+                    }
+                    console.log(subtotal)
+                    if(subtotal === 0){
+                        noItemsSelectedErrorParag.innerHTML = `
+                                            <div class = 'messageToUser' >
+                                                <img src="./images/errorIcon.png" alt="">
+                                                <p>No items Selected, You have to select one item with a quantity of at least'1'!</p>
+                                            </div>`
+                                            return false
+                    }
+                    else return true
             }
-        }}
+            
+        }
+    }
+} 
 
 
 function generateClientReceipt(){
