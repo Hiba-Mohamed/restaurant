@@ -46,9 +46,10 @@ const menuPrices =
 //handle submission 
 let orderDetails=[];
 let subtotal = 0;
+const form = document.querySelector('.orderForm');
 const OrderDetailsTable = document.querySelector('#orderDetailsTable');
-const orderOutputSection = document.querySelector('.orderOutputSection')
-const submitButton = document.querySelector("#orderSubmit")
+const orderOutputSection = document.querySelector('.orderOutputSection');
+const submitButton = document.querySelector("#orderSubmit");
 submitButton.addEventListener('click', function(e){
 e.preventDefault();
 
@@ -248,6 +249,7 @@ function validateItemQuantitiesAndCalculateSubtotal()
 
 
 function generateClientReceipt(){
+    form.style.display='none'
 
 
     const date = new Date();
@@ -383,13 +385,17 @@ function handleConfirm(){
 
 // handle confirmation
 function handleEdit(){
+    const form = document.querySelector('.orderForm');
+
+    form.style.display = 'flex'
+
     submitButton.style.display = 'initial'
     orderDetails=[];
     subtotal = 0;
     console.log(orderDetails)
     console.log(subtotal)
     
-    OrderDetailsTable.innerHTML = `<p>You can edit your order from the above menu</p>`
+    OrderDetailsTable.innerHTML = `<p>You can edit your order from the above form!</p>`
 
     setTimeout(() => {
     OrderDetailsTable.style.backgroundColor = "";
@@ -400,10 +406,11 @@ function handleEdit(){
 
 // handle cancellation
 function handleCancel(){
+    const form = document.querySelector('.orderForm');
+    form.style.display = 'flex'
     submitButton.style.display = 'initial'
     orderDetails=[];
     subtotal = 0;
-    const form = document.querySelector('.orderForm')
     form.reset()
     OrderDetailsTable.style.backgroundColor = "";
     OrderDetailsTable.style.boxShadow = ""
