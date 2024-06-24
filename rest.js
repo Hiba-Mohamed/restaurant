@@ -268,6 +268,8 @@ function generateClientReceipt(){
         </tr>`
 
         OrderDetailsTable.innerHTML += output
+        OrderDetailsTable.style.backgroundColor = "white";
+        OrderDetailsTable.style.boxShadow = "5px 5px 5px 2px rgba(109, 122, 126, 0.177)"
     })
 
     OrderDetailsTable.innerHTML += `
@@ -330,7 +332,14 @@ function handleEdit(){
     subtotal = 0;
     console.log(orderDetails)
     console.log(subtotal)
-    OrderDetailsTable.innerHTML = `<p>You can edit you order from the above menu</p>`
+    
+    OrderDetailsTable.innerHTML = `<p>You can edit your order from the above menu</p>`
+
+    setTimeout(() => {
+    OrderDetailsTable.style.backgroundColor = "";
+    OrderDetailsTable.style.boxShadow = ""
+    OrderDetailsTable.innerHTML =``
+    }, 3000);
 }
 
 // handle cancellation
@@ -340,6 +349,8 @@ function handleCancel(){
     subtotal = 0;
     const form = document.querySelector('.orderForm')
     form.reset()
+    OrderDetailsTable.style.backgroundColor = "";
+    OrderDetailsTable.style.boxShadow = ""
     OrderDetailsTable.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
                 <p>Your order was successfully cancelled!</p></div>`
                 setTimeout(() => {

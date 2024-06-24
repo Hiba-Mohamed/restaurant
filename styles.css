@@ -256,8 +256,8 @@ footer p {
   align-items: center;
   padding: 70px;
   text-align: start;
-
 }
+
 #summary img{
   width: 400px;
 }
@@ -385,10 +385,10 @@ footer p {
 }
 
 #orderDetailsTable {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 15px;
   margin-top: 10px;
-  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
+  /* box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177); */
   width: 600px;
   display: flex;
   flex-direction: column;
@@ -752,10 +752,10 @@ align-items: center;
   }
 
   #orderDetailsTable {
-    background-color: white;
+    /* background-color: white; */
     border-radius: 15px;
     margin-top: 10px;
-    box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
+    /* box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177); */
     width: 480px;
     display: flex;
     flex-direction: column;
