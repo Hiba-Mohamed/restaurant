@@ -845,13 +845,15 @@ hr {
   box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
 }
 
-/* .menuBox h2 {
-  margin-top: 0;
-  color: #a52a2a;
-} */
-
 .menuBox p {
   margin: 10px 0;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+.menuBox img {
+  width: 140px;
+  height: 150px;
 }
 
 .smalltext {
