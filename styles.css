@@ -265,17 +265,6 @@ footer p {
   width: 400px;
 }
 
-/* #reviews {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  padding: 70px;
-}
-
-#reviews img {
-  width: 400px;
-} */
-
 #reviews {
   display: flex;
   flex-direction: row-reverse;
@@ -822,25 +811,44 @@ hr {
 
 .menuContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 20px;
-  margin: 20px 0;
+  margin: 0 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100px;
+  color: #a52a2a;
+}
+
+.menuBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .menuBox {
-  flex: 1 1 calc(33% - 20px);
   background-color: #f9f9f9;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(33.33% - 20px); /* 3 boxes per row with space between them */
+  box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
 }
 
-.menuBox h3 {
+/* .menuBox h2 {
   margin-top: 0;
   color: #a52a2a;
-}
+} */
 
 .menuBox p {
   margin: 10px 0;
@@ -850,3 +858,12 @@ hr {
   font-size: 15px;
   color: grey;
 }
+
+/* .menuBox1 {
+  flex: 1 1 calc(33% - 20px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
