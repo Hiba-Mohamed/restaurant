@@ -310,7 +310,7 @@ footer p {
 .OrderCategory h1 {
   font-family: fantasy;
   color: #a52a2a;
-  font-size: 2.5rem;
+  font-size: 50px;
 }
 
 .categoryOptions {
@@ -807,7 +807,12 @@ hr {
   align-items: center;
   width: auto;
   height: 100px;
+}
+
+.heading h1 {
   color: #a52a2a;
+  font-family: fantasy;
+  font-size: 50px;
 }
 
 .menuBoxes {
