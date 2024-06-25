@@ -88,14 +88,12 @@ nav li {
   height: 600px;
 }
 
-.menuMain{
-  background: url("./images/orderBgImg.png")
-  no-repeat center center/cover;
+.menuMain {
+  background: url("./images/orderBgImg.png") no-repeat center center/cover;
 }
 
-.bannerSectionMenu{
-
-    height: 100px;
+.bannerSectionMenu {
+  height: 100px;
 }
 
 .bannerSectionMenu h1 {
@@ -105,7 +103,7 @@ nav li {
   letter-spacing: 2px;
 }
 
-.bannerSectionMenu h1 span{
+.bannerSectionMenu h1 span {
   margin: 0;
   font-size: 3rem;
   letter-spacing: 2px;
@@ -143,28 +141,28 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
-  padding: 2rem 1rem;
+  padding: 32px 16px;
   text-align: center;
 }
 
 section h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 16px;
+  font-size: 32px;
   color: #a52a2a; /* Ottoman-inspired color */
 }
 
 section p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-size: 17px;
 }
 
 /* Reviews styles */
 #reviews blockquote {
   background: #e2e2e2;
-  padding: 1rem;
-  border-left: 10px solid #a52a2a;
-  margin: 1rem auto;
-  max-width: 600px;
+  padding: 16px;
+  border-left: 16px solid #a52a2a;
+  margin: 16px auto;
+  width: 700px;
   font-style: italic;
 }
 
@@ -173,12 +171,12 @@ footer {
   background: #a52a2a;
   color: white;
   text-align: center;
-  padding: 1rem 0;
+  padding: 16px 0;
 }
 
 footer p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 
 .menuBtn {
@@ -249,14 +247,13 @@ footer p {
   border-radius: 5px;
 }
 
-
-.orderTitle{
+.orderTitle {
   font-weight: bold;
   font-size: 2.5rem;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#summary{
+#summary {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -264,34 +261,53 @@ footer p {
   text-align: start;
 }
 
-#summary img{
+#summary img {
   width: 400px;
 }
 
-
-#reviews{
+/* #reviews {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   padding: 70px;
-
 }
-#reviews img{
+
+#reviews img {
   width: 400px;
+} */
+
+#reviews {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: left;
+  padding-right: 70px;
 }
 
-#biography{
+#reviews1 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+#reviews1 h2 {
+  text-align: left;
+}
+
+#reviews img {
+  width: 400px;
+  padding-top: 70px;
+}
+
+#biography {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 70px;
   text-align: start;
-
 }
-#biography img{
+#biography img {
   width: 400px;
 }
-
 
 .optionCard {
   padding: 10px;
@@ -381,7 +397,7 @@ footer p {
 }
 
 .orderSubmit {
- background-color: #a52a2a;
+  background-color: #a52a2a;
   color: white;
   border: 0;
   border-radius: 5px;
@@ -413,34 +429,32 @@ table {
   justify-content: start;
 }
 
-.itemName{
- width:200px;
- text-align: start;
+.itemName {
+  width: 200px;
+  text-align: start;
 }
 
-.itemPrice{
-  width:70px;
-  text-align: end;
-
-}
-
-.itemQuan{
-  width:70px;
+.itemPrice {
+  width: 70px;
   text-align: end;
 }
 
-.itemTotalPrice{
-  width:70px;
+.itemQuan {
+  width: 70px;
   text-align: end;
 }
 
+.itemTotalPrice {
+  width: 70px;
+  text-align: end;
+}
 
 th {
   font-weight: bolder;
   font-size: 2rem;
 }
 
-.calc{
+.calc {
   width: 428px;
   display: flex;
   flex-direction: row;
@@ -456,12 +470,11 @@ th {
   text-align: start;
 }
 
-.custDisInfo td{
+.custDisInfo td {
   width: 200px;
 }
 
-
-.tableHead{
+.tableHead {
   width: 480px;
   display: flex;
   flex-direction: column;
@@ -479,7 +492,6 @@ hr {
   width: 400px;
 }
 
-
 .calculationDiv tbody tr {
   display: flex;
   align-items: start;
@@ -487,7 +499,7 @@ hr {
   width: 400px;
 }
 
-.cancel{
+.cancel {
   width: 100px;
   height: 30px;
   color: #a52a2a;
@@ -499,7 +511,7 @@ hr {
   margin: 10px;
 }
 
-.edit{
+.edit {
   width: 100px;
   height: 32px;
   text-align: center;
@@ -512,19 +524,19 @@ hr {
   margin: 10px;
 }
 
-.confirm{
+.confirm {
   width: 100px;
   height: 33px;
   color: white;
   font-size: medium;
-  background-color:#a52a2a;
+  background-color: #a52a2a;
   border: white;
   border: 2px solid;
   border-radius: 5px;
   margin: 10px;
 }
 
-.buttonsDiv{
+.buttonsDiv {
   width: 450px;
   padding: 50px;
   display: flex;
@@ -533,20 +545,18 @@ hr {
   justify-content: center;
 }
 
-.orderOutputSection{
+.orderOutputSection {
   width: 500px;
   display: flex;
   flex-direction: column;
-align-items: center;
+  align-items: center;
 }
 
-
-
-.hidden{
+.hidden {
   display: none;
 }
 
-.anotherOrder{
+.anotherOrder {
   background-color: #a52a2a;
   color: white;
   border: 0;
@@ -558,8 +568,7 @@ align-items: center;
   text-decoration: none;
 }
 
-
-.messageToUser{
+.messageToUser {
   width: 300px;
   display: flex;
   flex-direction: row;
@@ -569,23 +578,23 @@ align-items: center;
   margin-top: 10px;
 }
 
-.messageToUser img{
+.messageToUser img {
   width: 50px;
   padding: 10px;
 }
 
-.messageToUser p{
+.messageToUser p {
   font-size: medium;
   padding: 10px;
 }
 
-.clientReciptDiv{
+.clientReciptDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.orderDateTime{
+.orderDateTime {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -772,60 +781,43 @@ align-items: center;
     margin: 20px 10px 20px 10px;
   }
 
-  .buttonsDiv{
+  .buttonsDiv {
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} 
-
-.custDisInfo {
-  display: flex;
-  flex-direction: row;
-  width: 400px;
-  justify-content: center;
-  align-items: center;
-}
-
-.custDisInfo td{
-  width: 200px;
-}
-
   }
 
-.belowBanner{
-  background: url("./images/orderBgImg.png")
-  no-repeat center center/cover;
+  .custDisInfo {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .custDisInfo td {
+    width: 200px;
+  }
 }
 
-.restInfoDiv{
+.belowBanner {
+  background: url("./images/orderBgImg.png") no-repeat center center/cover;
+}
+
+.restInfoDiv {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}  
+}
 
-.restInfoDiv img{
+.restInfoDiv img {
   width: 370px;
   margin: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-}
-
-
-
-.imageContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-}
-
-.imageContainer img {
-  max-width: 100%;
-  height: auto;
 }
 
 .menuContainer {
