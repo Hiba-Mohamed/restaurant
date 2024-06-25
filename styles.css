@@ -1,4 +1,3 @@
-/* General styles */
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
@@ -73,7 +72,6 @@ nav li {
   margin: 6px;
 }
 
-/* Header styles */
 .bannerSection {
   display: flex;
   flex-direction: column;
@@ -139,7 +137,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Section styles */
 section {
   padding: 32px 16px;
   text-align: center;
@@ -148,7 +145,7 @@ section {
 section h2 {
   margin-bottom: 16px;
   font-size: 32px;
-  color: #a52a2a; /* Ottoman-inspired color */
+  color: #a52a2a;
 }
 
 section p {
@@ -156,17 +153,6 @@ section p {
   font-size: 17px;
 }
 
-/* Reviews styles */
-#reviews blockquote {
-  background: #e2e2e2;
-  padding: 16px;
-  border-left: 16px solid #a52a2a;
-  margin: 16px auto;
-  width: 700px;
-  font-style: italic;
-}
-
-/* Footer styles */
 footer {
   background: #a52a2a;
   color: white;
@@ -268,23 +254,22 @@ footer p {
 #reviews {
   display: flex;
   flex-direction: row-reverse;
-  align-items: left;
-  padding-right: 70px;
-}
-
-#reviews1 {
-  display: flex;
-  flex-direction: column;
-  padding-right: 10px;
-}
-
-#reviews1 h2 {
-  text-align: left;
+  align-items: center;
+  padding: 70px;
+  text-align: start;
 }
 
 #reviews img {
   width: 400px;
-  padding-top: 70px;
+}
+
+#reviews blockquote {
+  background: #e2e2e2;
+  padding: 16px;
+  border-left: 16px solid #a52a2a;
+  margin: 16px auto;
+  width: auto;
+  font-style: italic;
 }
 
 #biography {
@@ -640,7 +625,7 @@ hr {
 
   .dropDown a {
     text-decoration: none;
-    color: rgb(248, 241, 232);
+    color: rgb(118, 87, 46);
     font-family: fantasy;
   }
 
@@ -841,8 +826,12 @@ hr {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: calc(33.33% - 20px); /* 3 boxes per row with space between them */
-  box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+}
+
+.menuBox h3 {
+  color: #a52a2a;
 }
 
 .menuBox p {
@@ -860,12 +849,3 @@ hr {
   font-size: 15px;
   color: grey;
 }
-
-/* .menuBox1 {
-  flex: 1 1 calc(33% - 20px);
-  background-color: #f9f9f9;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
