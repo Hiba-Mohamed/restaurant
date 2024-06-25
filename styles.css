@@ -593,12 +593,88 @@ align-items: center;
   padding: 20px;
 }
 
+.qaunInputHidden{
+  display: none;
+}
+
 /* Responsive design  xtablet*/
-@media (min-width: 450px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
+
+  .logo{
+    width: 30px;
+    padding: 0px;
+  }
+
+  .logoAndText{
+    height: 35px;
+  }
+
+  .logoAndText a{
+    padding: 0;
+    height: 45px;
+  }
+
+  header{
+    height: 40px;
+  }
+
+  .menuIcon{
+    width: 25px;
+    padding-right: 10px;  }
+
+  .headerStrip{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .orderBody{
+  display:flex;
+  }
+
+  .orderOutputSection{
+    width: 345px;
+  }
+
+  .orderTitle{
+    font-size: 1.5rem;
+  }
+
+  .OrderCategory h1{
+    font-size: 1.5rem;
+  }
+
+ .encapCard{
+  width: 350px;
+ }
   .bannerSection h1 {
     font-size: 2rem;
   }
 
+  .noteSection{
+    width: 310px;
+  }
+
+  .qaunInput{
+    display: none;
+  }
+
+  .qaunInputHidden{
+    display: flex;
+    width: 200px;
+  }
+  
+  .qaunInputHidden input {
+    width: 50px;
+    margin-left: 50px;
+    background-color: rgb(250, 248, 244);
+    border: #f4f4f4;
+    color: #a52a2a;
+    font-size: larger;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
   .emphText2 {
     font-size: 3rem;
   }
@@ -660,7 +736,7 @@ align-items: center;
   }
 
   .optionCard {
-    width: 450px;
+    width: 350px;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -669,7 +745,7 @@ align-items: center;
   }
 
   .optionDetails {
-    width: 250px;
+    width: 200px;
   }
 
   .encapCard {
@@ -684,18 +760,7 @@ align-items: center;
     margin-right: 30px;
   }
 
-  .qaunInput {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
 
-  .qaunInput input {
-    width: 40px;
-    margin-left: 0;
-    background-color: rgb(250, 248, 244);
-    border: #f4f4f4;
-  }
 
   .orderForm {
     display: flex;
@@ -704,10 +769,14 @@ align-items: center;
     border-radius: 30px;
   }
 
+  
   .OrderCategory {
+    width: 375px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .categoryOptions {
@@ -724,6 +793,7 @@ align-items: center;
     font-size: large;
     background-color: white;
     padding: 40px;
+    margin: 20px 0px 20px 0px;
     border-radius: 5px;
   }
 
