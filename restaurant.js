@@ -1,3 +1,4 @@
+
 const submitButton = document.querySelector("#orderSubmit");
 submitButton.addEventListener
 ('click', function(e) 
@@ -181,6 +182,7 @@ submitButton.addEventListener
                                                 const itemQuantityAndPriceArray = generateItemQuantityAndPriceArray()
                                                 calculateSubtotal()
                                                 generateCustomerRecipt()
+                                                
 
                                             }
                                     }
@@ -232,6 +234,8 @@ submitButton.addEventListener
             else
                 {
                     noItemsSelectedDiv.innerHTML =``
+                    noItemsSelectedDiv.style.boxShadow = ""
+                    noItemsSelectedDiv.style.backgroundColor = ''
                     return true
                      
                 }
@@ -552,7 +556,8 @@ submitButton.addEventListener
         </div>
         `                      
         }
-
+    orderDetailsTable.style.boxShadow = "5px 5px 5px 2px rgba(109, 122, 126, 0.177)"
+    orderDetailsTable.style.backgroundColor = 'white'
 
 
 
