@@ -182,6 +182,7 @@ submitButton.addEventListener
                      validateCustomerName()
                     if(validateCustomerName())
                     {
+                        validateCustomerCard()
                         const isValidCustomerCard = validateCustomerCard()
                         if (isValidCustomerCard)
                             {
@@ -349,7 +350,22 @@ submitButton.addEventListener
         function validateCustomerCard(){
             const customerCard = inputArrayCreated[27]
             const cardErrorMessage = document.querySelector('#cardErrorMessage');
-            return true
+            const validCustomerCardRE = /[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}/;
+            const testResult = validCustomerCardRE.test(customerCard)
+            if(testResult)
+                {
+                    return true
+                }
+            else
+                {
+                    cardErrorMessage.innerHTML =                 `
+                    <div class = 'messageToUser' >
+                        <img src="./images/errorIcon.png" alt="">
+                        <p>Invalid Card format, please enter card number in this format: 0000-0000-0000-0000 </p>
+                    </div>
+                    `
+                    return false
+                }
         }
 
 
