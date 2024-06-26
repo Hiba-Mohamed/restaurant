@@ -366,15 +366,15 @@ submitButton.addEventListener
         function validateCustPhoneNumber(){
             const customerPhone = inputArrayCreated[29]
             const PhoneErrorMessage = document.querySelector('#PhoneErrorMessage');
-            const customerPhoneRE = /\+[0-9]{11}/;
+            const customerPhoneRE = /\+[0-9]{10}/;
             const testResult = customerPhoneRE.test(customerPhone)
             console.log(testResult)
-            if (customerPhone !=="" && customerPhone.length !== 12)
+            if (customerPhone !=="" && customerPhone.length !== 11)
             {
                 PhoneErrorMessage.innerHTML = `
                     <div class = 'messageToUser' >
                         <img src="./images/errorIcon.png" alt="">
-                        <p>Phone number format invalid! Please ensure there is a '+' sign and 11 digits. </p>
+                        <p>Phone number format invalid! Please ensure there is a '+' sign and 10 digits. </p>
                     </div>`
 
                     return false
