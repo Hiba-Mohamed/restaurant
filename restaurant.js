@@ -82,11 +82,12 @@ submitButton.addEventListener
             console.log('customerPhone: ', customerPhone)
             if(customerName === ""){
                 //Generate a user alert message for empty name field
-                nameErrorMessage.innerHTML = ` 
-                <div class = 'messageToUser' >
+                nameErrorMessage.innerHTML = `
+                 <div class = 'messageToUser' >
                 <img src="./images/errorIcon.png" alt="">
                 <p>Full name must NOT be empty</p>
-                </div>`
+                </div>
+                `
                 nameErrorMessage.classList.add('messageToUser')
                 return false
             }
@@ -98,8 +99,8 @@ submitButton.addEventListener
                 {
                     //generate error message for card
                         cardErrorMessage.innerHTML = `
-                         <div class = 'messageToUser' >
-                         <img src="./images/errorIcon.png" alt="">
+                        <div class = 'messageToUser' >
+                        <img src="./images/errorIcon.png" alt="">
                         <p>Card Number must NOT be empty</p>
                         </div>`
                         return false
@@ -112,8 +113,9 @@ submitButton.addEventListener
                     if(customerPostalCode === "")
                         {
                             //generate error message for address
-                            addressErrorMessage.innerHTML = 
-                            ` <div class = 'messageToUser' > <img src="./images/errorIcon.png" alt="">
+                            addressErrorMessage.innerHTML = `
+                             <div class = 'messageToUser' >
+                             <img src="./images/errorIcon.png" alt="">
                             <p>Postal Code must NOT be empty</p>
                             </div>`
                             return false
@@ -126,8 +128,8 @@ submitButton.addEventListener
                             if(customerPhone === "")
                                 {
                                     PhoneErrorMessage.innerHTML = `
-                                     <div class = 'messageToUser' >
-                                     <img src="./images/errorIcon.png" alt="">
+                                    <div class = 'messageToUser' >
+                                    <img src="./images/errorIcon.png" alt="">
                                     <p>Phone number must NOT be empty</p>
                                     </div>`
                                     return false
@@ -173,8 +175,8 @@ submitButton.addEventListener
                                 const isValidCustomerPostalCode = validatePostalCodeFormat()
                                 if (isValidCustomerPostalCode)
                                     {
-                                        validateCustPhoneNumber()
-                                        if(validateCustPhoneNumber())
+                                        const isValidCustomerNumber = validateCustPhoneNumber()
+                                        if(isValidCustomerNumber)
                                             {
                                                 const itemQuantityAndPriceArray = generateItemQuantityAndPriceArray()
                                                 calculateSubtotal()
@@ -196,7 +198,7 @@ submitButton.addEventListener
                     `
                     <div class = 'messageToUser' >
                         <img src="./images/errorIcon.png" alt="">
-                        <p>Please enter only number didgits no other characters allowed for quantity !</p>
+                        <p>Please enter only number digits no other characters allowed for quantity !</p>
                     </div>
                     `
                 }
@@ -337,8 +339,7 @@ submitButton.addEventListener
 
 
 
-        function validateCustPhoneNumber()
-        {
+        function validateCustPhoneNumber(){
             const customerPhone = inputArrayCreated[29]
             const PhoneErrorMessage = document.querySelector('#PhoneErrorMessage');
             const customerPhoneRE = /\+[0-9]{11}/;
@@ -368,7 +369,7 @@ submitButton.addEventListener
                 }
                 else
                 {
-                    PhoneErrorMessage.innerHTML =``
+                    addressErrorMessage.innerHTML =``
                     return customerPhone
                 }
             }
@@ -462,6 +463,7 @@ submitButton.addEventListener
             console.log(orderTime)
 
             const customerPostalCode = validatePostalCodeFormat()
+            const customerPhone = validateCustPhoneNumber()
         
         
         
@@ -616,5 +618,4 @@ function handleCancel(){
                     </table>`
                 }, 5000);
 }
-
 
