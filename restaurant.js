@@ -201,6 +201,8 @@ submitButton.addEventListener
                         <p>Please enter only number digits no other characters allowed for quantity !</p>
                     </div>
                     `
+                    noItemsSelectedDiv.style.boxShadow = "5px 5px 5px 2px rgba(109, 122, 126, 0.177)"
+                    noItemsSelectedDiv.style.backgroundColor = 'white'
                 }
             }
             }
@@ -222,7 +224,9 @@ submitButton.addEventListener
                         <img src="./images/errorIcon.png" alt="">
                         <p>No items Selected, You have to select one item with a quantity of at least '1' !</p>
                     </div>
-                    `
+                    `                  
+                    noItemsSelectedDiv.style.boxShadow = "5px 5px 5px 2px rgba(109, 122, 126, 0.177)"
+                    noItemsSelectedDiv.style.backgroundColor = 'white'
                     return false
                 }
             else
@@ -573,7 +577,8 @@ function handleConfirm(){
                                     </div>
                                 <a class="anotherOrder" href="order.html">Place Another Order</a>
 `
-    
+    orderDetailsTable.style.boxShadow = "5px 5px 5px 2px rgba(109, 122, 126, 0.177)"
+    orderDetailsTable.style.backgroundColor = 'white'
 }
 
 
