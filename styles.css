@@ -363,12 +363,7 @@ footer p {
   background-color: rgb(250, 248, 244);
 }
 
-.custInfo .label1 {
-  margin-right: 29px;
-}
-.custInfo .label3 {
-  margin-right: 32px;
-}
+
 
 .orderSubmit {
   background-color: #a52a2a;
@@ -576,6 +571,22 @@ hr {
   padding: 20px;
 }
 
+.custInfo div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.custInfo div label{
+ width: 130px;
+ text-align: start;
+}
+
+.custInfo div input{
+  width: 180px;
+
+ }
+
 /* Responsive design  xtablet*/
 @media (min-width: 450px) and (max-width: 768px) {
   .bannerSection h1 {
@@ -706,11 +717,17 @@ hr {
   .custInfo {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     font-size: large;
     background-color: white;
     padding: 40px;
     border-radius: 5px;
+  }
+  .custInfo div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .custInfo input {
@@ -721,13 +738,7 @@ hr {
     background-color: rgb(250, 248, 244);
   }
 
-  .custInfo .label1 {
-    margin-right: 29px;
-  }
 
-  .custInfo .label3 {
-    margin-right: 32px;
-  }
 
   .orderSubmit {
     background-color: #a52a2a;
