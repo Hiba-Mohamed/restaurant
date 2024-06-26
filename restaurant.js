@@ -179,8 +179,8 @@ submitButton.addEventListener
                 const isQuanitiesOnlyDigits = validateQuanitiesOnlyDigits()
                 if (isQuanitiesOnlyDigits)
                 {
-                    const isvalidCustomerName = validateCustomerName()
-                    if(isvalidCustomerName)
+                     validateCustomerName()
+                    if(validateCustomerName())
                     {
                         const isValidCustomerCard = validateCustomerCard()
                         if (isValidCustomerCard)
@@ -283,7 +283,12 @@ submitButton.addEventListener
         
         
 
-
+        `
+        <div class = 'messageToUser' >
+            <img src="./images/errorIcon.png" alt="">
+            <p>No items Selected, You have to select one item with a quantity of at least '1' !</p>
+        </div>
+        ` 
         function validateQuanitiesOnlyDigits()
         {
             const onlyDigitsRE = /([0-9]([0-9]*)?)/;
@@ -320,7 +325,22 @@ submitButton.addEventListener
         function validateCustomerName(){
             const customerName = inputArrayCreated[26]
             const nameErrorMessage = document.querySelector('#nameErrorMessage');
-            return true
+            const validNameRE = /^[a-zA-Z\s'-]+$/
+            const testResult = validNameRE.test(customerName)
+            if (testResult)
+            {   
+                return true
+            }
+            else
+            {
+                nameErrorMessage.innerHTML =                 `
+                <div class = 'messageToUser' >
+                    <img src="./images/errorIcon.png" alt="">
+                    <p>Please enter a valid form full name! Only special characters allowed are - and ' </p>
+                </div>
+                `
+                return false
+            }
         }
 
 
