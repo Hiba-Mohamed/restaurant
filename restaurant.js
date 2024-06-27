@@ -669,13 +669,14 @@ function handleCancel(){
     orderDetails=[];
     subtotal = 0;
     form.reset()
-    orderDetailsTable.style.backgroundColor = "";
-    orderDetailsTable.style.boxShadow = ""
+
     orderDetailsTable.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
                 <p>Your order was successfully cancelled!</p></div>`
                 setTimeout(() => {
                     orderDetailsTable.innerHTML = `<table id="orderDetailsTable" >
                     </table>`
+                        orderDetailsTable.style.backgroundColor = "";
+    orderDetailsTable.style.boxShadow = ""
                 }, 5000);
 }
 
