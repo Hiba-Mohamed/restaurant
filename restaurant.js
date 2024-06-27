@@ -591,9 +591,9 @@ submitButton.addEventListener
                 <td>Taxes</td>
                 <td>$${(subTotal * 0.15).toFixed(2)}</td>
             </tr>
-            <tr class = "calc">
-                <td colspan="2">
-                <hr/>
+            <tr class = "calcHr">
+                <td class = "hrBottomtd">
+                <hr />
                 </td>
             </tr>
             <tr class = "calc">

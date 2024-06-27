@@ -428,6 +428,22 @@ th {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.calcHr
+{
+  display: flex;
+  justify-content: center;
+
+}
+
+tbody
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .custDisInfo {
@@ -459,14 +475,9 @@ hr {
   height: 1px;
   color: #00000067;
   width: 400px;
+  align-self: center;
 }
 
-.calculationDiv tbody tr {
-  display: flex;
-  align-items: start;
-  flex-direction: row;
-  width: 400px;
-}
 
 .cancel {
   width: 100px;
@@ -544,11 +555,10 @@ hr {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  margin-top: 10px;
 }
 
 .messageToUser img {
-  width: 50px;
+  width: 30px;
   padding: 10px;
 }
 
@@ -565,7 +575,7 @@ hr {
 
 .orderDateTime {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
@@ -587,6 +597,15 @@ hr {
 
  }
 
+ .hrBottomtd
+ {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+ }
+
 /* Responsive design  xtablet*/
 @media (min-width: 450px) and (max-width: 768px) {
   .bannerSection h1 {
@@ -601,7 +620,7 @@ hr {
     font-size: 2rem;
   }
   .messageToUser img {
-    width: 50px;
+    width: 30px;
     padding: 10px;
   }
   nav ul {
@@ -750,9 +769,7 @@ hr {
     margin-top: 50px;
   }
 
-  #orderDetailsTable td {
-    width: 140px;
-  }
+
 
   #orderDetailsTable {
     /* background-color: white; */
