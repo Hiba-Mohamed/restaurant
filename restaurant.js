@@ -502,6 +502,23 @@ submitButton.addEventListener
 
         function generateCustomerRecipt()
         {
+            const customerName = inputArrayCreated[26]
+            const fullNameRE = /^([a-zA-Z\s'-]+)\s([a-zA-Z\s'-]+)$/
+            const customerNameLength = customerName.length
+            const firstLastNameArray = customerName.match(fullNameRE)
+            const firstName = firstLastNameArray[1]
+            const firstNamelength = firstName.length
+            const firstFirstLetterCap = firstName[0].toUpperCase()
+            const lastName = firstLastNameArray[2]
+            const lastFirstLetterCap = lastName[0].toUpperCase()
+            const lastNameLength = lastName.length
+
+            console.log(firstLastNameArray)
+
+            const formattedCustomerName = `${firstFirstLetterCap}${firstName.substring(1, firstNamelength+1)} ${lastFirstLetterCap}${lastName.substring(1,lastNameLength+1)}`
+            const customerCard = inputArrayCreated[27]
+            const customerCardFormatted = `xxxxxxxxxxxx${customerCard.substring(15,19)}`
+
             const form = document.querySelector('.orderForm');
             form.style.display='none'
             const orderDetailsTable = document.querySelector('#orderDetailsTable');
@@ -540,11 +557,11 @@ submitButton.addEventListener
                                             </tr>
                                             <tr class="custDisInfo">
                                                 <td ><strong>Customer Name: </strong></td>
-                                                <td>${inputArrayCreated[26]}</td>
+                                                <td>${formattedCustomerName}</td>
                                             </tr>
                                             <tr class="custDisInfo">
                                                 <td><strong>Card Number: </strong></td>
-                                                <td>${inputArrayCreated[27]}</td>
+                                                <td>${customerCardFormatted}</td>
                                             </tr> 
                                             <tr class="custDisInfo">
                                                 <td><strong>Postal Code: </strong></td>
