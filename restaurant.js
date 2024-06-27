@@ -582,7 +582,6 @@ submitButton.addEventListener
             orderDetailsTable.innerHTML +=
          `
         <hr/>
-        <div class ="calculationDiv">
             <tr class = "calc">
                 <td>Subtotal</td>
                 <td>$${(subTotal).toFixed(2)}</td>
@@ -600,7 +599,6 @@ submitButton.addEventListener
                 <td>Total</td>
                 <td>$${(subTotal * 1.12).toFixed(2)}</td>
             </tr>
-        </div>
         <div class="buttonsDiv">
             <button class="cancel" onclick="handleCancel()">Cancel</button>
             <button class="edit" onclick="handleEdit()">Edit</button>
