@@ -734,6 +734,31 @@ hr {
     display: flex;
     flex-direction: column;
   }
+
+  #categortyTitle
+  {
+    font-size: 1.6rem;
+  }
+
+  .bannerSectionMenu h1 {
+    font-family: fantasy;
+    margin: 0;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+}
+
+.bannerSectionMenu h1 span {
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+}
+
+.heading h1 {
+  color: #a52a2a;
+  font-family: fantasy;
+  font-size: 50px;
+}
+
   #summary img {
     width: 200px;
   }
@@ -1263,6 +1288,10 @@ hr {
     flex-direction: column;
     margin: 0 10px;
   }
+  .menuContainer .heading h1
+  {
+    font-size: 1.4rem;
+  }
 
   .heading {
     display: flex;
@@ -1270,7 +1299,6 @@ hr {
     align-items: center;
     width: auto;
     height: 100px;
-    padding-top: 50px;
   }
 
   .heading h1 {
