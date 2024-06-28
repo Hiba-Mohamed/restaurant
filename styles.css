@@ -1255,27 +1255,6 @@ hr {
     width: 200px;
   }
 
-  .menuContainer {
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px;
-  }
-
-  .heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100px;
-    padding-top: 50px;
-  }
-
-  .heading h1 {
-    color: #a52a2a;
-    font-family: fantasy;
-    font-size: 36px;
-  }
-
   .menuBoxes {
     display: flex;
     flex-direction: column;
