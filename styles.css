@@ -218,6 +218,60 @@ footer p {
   margin-right: 30px;
 }
 
+.restaurantInfoDiv
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 20px;
+}
+.resturantAllInfo
+{
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsDiv
+{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 120px;
+
+  background-color: white;
+  color: #a52a2a;
+  font-weight: bold;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
+
+}
+
+.resturantAllInfo .title{
+  background-color: #4c4a4a;
+  color: white;
+  font-size: larger;
+  width: 315px;
+  height: 35px;
+  margin: 0;
+  padding-left: 15px;
+  border-radius: 5px 5px 0px 0px;;
+
+}
+
+
+
+.locationIcon, .clockIcon, .phoneIcon{
+  width: 50px;
+  height: 70px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+
 .addButton {
   background-color: #a52a2a;
   border: 0;
@@ -952,6 +1006,9 @@ hr {
   .belowBanner {
     background: url("./images/orderBgImg.png") no-repeat center
       center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
   }
 
   .restInfoDiv {
