@@ -218,54 +218,6 @@ footer p {
   margin-right: 30px;
 }
 
-.restaurantInfoDiv {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px;
-  gap: 20px;
-}
-.resturantAllInfo {
-  width: 330px;
-  display: flex;
-  flex-direction: column;
-}
-
-.detailsDiv {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  height: 120px;
-
-  background-color: white;
-  color: #a52a2a;
-  font-weight: bold;
-  border-radius: 0px 0px 5px 5px;
-  box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
-}
-
-.resturantAllInfo .title {
-  background-color: #4c4a4a;
-  color: white;
-  font-size: larger;
-  width: 315px;
-  height: 35px;
-  margin: 0;
-  padding-left: 15px;
-  border-radius: 5px 5px 0px 0px;
-}
-
-.locationIcon,
-.clockIcon,
-.phoneIcon {
-  width: 50px;
-  height: 70px;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
 .addButton {
   background-color: #a52a2a;
   border: 0;
@@ -723,36 +675,6 @@ hr {
 
 /* Responsive Design for Mobile */
 @media (max-width: 450px) {
-  #summary {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-  }
-
-  #summary img {
-    width: 250px;
-  }
-
-  #reviews {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-  }
-
-  #reviews img {
-    width: 250px;
-  }
-
-  #biography {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-  }
-
-  #biography img {
-    width: 250px;
-  }
-
   .headerStrip {
     padding: 0 10px;
     width: auto;
@@ -803,7 +725,7 @@ hr {
   }
 
   .restInfoDiv img {
-    width: 80%;
+    width: 90%;
   }
 
   .bannerSection h1 {
@@ -989,9 +911,6 @@ hr {
   .belowBanner {
     background: url("./images/orderBgImg.png") no-repeat center
       center/cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .restInfoDiv {
@@ -1255,6 +1174,27 @@ hr {
     width: 200px;
   }
 
+  .menuContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+  }
+
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100px;
+    padding-top: 50px;
+  }
+
+  .heading h1 {
+    color: #a52a2a;
+    font-family: fantasy;
+    font-size: 36px;
+  }
+
   .menuBoxes {
     display: flex;
     flex-direction: column;
@@ -1307,7 +1247,7 @@ hr {
 }
 
 .restInfoDiv img {
-  width: 300px;
+  width: 370px;
   margin: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1328,6 +1268,7 @@ hr {
   align-items: center;
   width: auto;
   height: 100px;
+  padding-top: 10px;
 }
 
 .heading h1 {
@@ -1345,25 +1286,25 @@ hr {
 
 .menuBox {
   background-color: #f9f9f9;
-  padding: 20px;
+  padding-top: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  width: calc(33.33% - 20px);
-  box-sizing: border-box;
+  width: calc((100% - 60px) / 3);
+  height: 250px;
 }
 
 .menuBox h3 {
   color: #a52a2a;
+  padding-top: 20px;
 }
 
 .menuBox p {
-  margin: 10px 0;
-  padding-right: 10px;
-  padding-left: 20px;
+  /* margin: 10px 0; */
+  padding: 20px;
 }
 
 .menuBox img {
