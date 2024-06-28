@@ -72,8 +72,7 @@ nav li {
   margin: 6px;
 }
 
-.restaurantInfoDiv
-{
+.restaurantInfoDiv {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -82,15 +81,13 @@ nav li {
   padding-top: 50px;
   gap: 20px;
 }
-.resturantAllInfo
-{
+.resturantAllInfo {
   width: 340px;
   display: flex;
   flex-direction: column;
 }
 
-.detailsDiv
-{
+.detailsDiv {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -101,10 +98,9 @@ nav li {
   font-weight: bold;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 5px 5px 5px 2px rgba(109, 122, 126, 0.177);
-
 }
 
-.resturantAllInfo .title{
+.resturantAllInfo .title {
   background-color: #4c4a4a;
   color: white;
   font-size: larger;
@@ -112,13 +108,12 @@ nav li {
   height: 35px;
   margin: 0;
   padding-left: 15px;
-  border-radius: 5px 5px 0px 0px;;
-
+  border-radius: 5px 5px 0px 0px;
 }
 
-
-
-.locationIcon, .clockIcon, .phoneIcon{
+.locationIcon,
+.clockIcon,
+.phoneIcon {
   width: 50px;
   height: 70px;
   padding-top: 10px;
@@ -300,11 +295,9 @@ footer p {
   width: 400px;
 }
 
-#contactDiv a
-{
+#contactDiv a {
   text-decoration: none;
   color: #a52a2a;
-
 }
 
 #reviews {
@@ -735,15 +728,12 @@ hr {
 
 /* Responsive Design for Mobile */
 @media (max-width: 450px) {
-
-  body
-  {
+  body {
     display: flex;
     flex-direction: column;
   }
 
-  #categortyTitle
-  {
+  #categortyTitle {
     font-size: 1.6rem;
   }
 
@@ -752,39 +742,39 @@ hr {
     margin: 0;
     font-size: 1.7rem;
     letter-spacing: 2px;
-}
+  }
 
-.bannerSectionMenu h1 span {
-  margin: 0;
-  font-size: 1.7rem;
-  letter-spacing: 2px;
-}
+  .bannerSectionMenu h1 span {
+    margin: 0;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+  }
 
-.heading h1 {
-  color: #a52a2a;
-  font-family: fantasy;
-  font-size: 50px;
-}
+  .heading h1 {
+    color: #a52a2a;
+    font-family: fantasy;
+    font-size: 50px;
+  }
 
   #summary img {
     width: 200px;
   }
-  
-  #summary div{
+
+  #summary div {
     width: 330px;
   }
 
   #reviews img {
     width: 200px;
-}
+  }
 
-#biography div {
-  width: 330px;
-}
+  #biography div {
+    width: 330px;
+  }
 
-#reviews div {
-  width: 300px;
-}
+  #reviews div {
+    width: 300px;
+  }
   .headerStrip {
     padding: 0 10px;
     width: auto;
@@ -1025,9 +1015,10 @@ hr {
   .belowBanner {
     background: url("./images/orderBgImg.png") no-repeat center
       center/cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .restInfoDiv {
     display: flex;
@@ -1075,7 +1066,7 @@ hr {
 
   .menuBox {
     width: 100% !important;
-    height: 250px !important;
+    height: 300px !important;
     margin-bottom: 20px;
   }
 
@@ -1295,8 +1286,7 @@ hr {
     flex-direction: column;
     margin: 0 10px;
   }
-  .menuContainer .heading h1
-  {
+  .menuContainer .heading h1 {
     font-size: 1.4rem;
   }
 
@@ -1324,7 +1314,7 @@ hr {
 
   .menuBox {
     width: 100% !important;
-    height: 250px !important;
+    height: 300px !important;
     margin-bottom: 20px;
   }
 
