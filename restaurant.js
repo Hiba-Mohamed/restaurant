@@ -97,7 +97,7 @@ submitButton.addEventListener
                 //Generate a user alert message for empty name field
                 nameErrorMessage.innerHTML = `
                  <div class = 'messageToUser' >
-                <img src="./images/errorIcon.png" alt="">
+                <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                 <p>Full name must NOT be empty</p>
                 </div>
                 `
@@ -113,7 +113,7 @@ submitButton.addEventListener
                     //generate error message for card
                         cardErrorMessage.innerHTML = `
                         <div class = 'messageToUser' >
-                        <img src="./images/errorIcon.png" alt="">
+                        <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                         <p>Card Number must NOT be empty</p>
                         </div>`
                         return false
@@ -128,7 +128,7 @@ submitButton.addEventListener
                             //generate error message for address
                             addressErrorMessage.innerHTML = `
                              <div class = 'messageToUser' >
-                             <img src="./images/errorIcon.png" alt="">
+                             <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                             <p>Postal Code must NOT be empty</p>
                             </div>`
                             return false
@@ -142,7 +142,7 @@ submitButton.addEventListener
                                 {
                                     PhoneErrorMessage.innerHTML = `
                                     <div class = 'messageToUser' >
-                                    <img src="./images/errorIcon.png" alt="">
+                                    <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                                     <p>Phone number must NOT be empty</p>
                                     </div>`
                                     return false
@@ -212,7 +212,7 @@ submitButton.addEventListener
                     noItemsSelectedDiv.innerHTML =
                     `
                     <div class = 'messageToUser' >
-                        <img src="./images/errorIcon.png" alt="">
+                        <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                         <p>Please enter only number digits no other characters allowed for quantity !</p>
                     </div>
                     `
@@ -236,7 +236,7 @@ submitButton.addEventListener
                     noItemsSelectedDiv.innerHTML =
                     `
                     <div class = 'messageToUser' >
-                        <img src="./images/errorIcon.png" alt="">
+                        <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                         <p>No items Selected, You have to select one item with a quantity of at least '1' !</p>
                     </div>
                     `                  
@@ -286,7 +286,7 @@ submitButton.addEventListener
 
         `
         <div class = 'messageToUser' >
-            <img src="./images/errorIcon.png" alt="">
+            <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
             <p>No items Selected, You have to select one item with a quantity of at least '1' !</p>
         </div>
         ` 
@@ -336,7 +336,7 @@ submitButton.addEventListener
             {
                 nameErrorMessage.innerHTML =                 `
                 <div class = 'messageToUser' >
-                    <img src="./images/errorIcon.png" alt="">
+                    <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                     <p>Please enter a valid form full name! Only special characters allowed are - and ' </p>
                 </div>
                 `
@@ -360,7 +360,7 @@ submitButton.addEventListener
                 {
                     cardErrorMessage.innerHTML =                 `
                     <div class = 'messageToUser' >
-                        <img src="./images/errorIcon.png" alt="">
+                        <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                         <p>Invalid Card format, please enter card number in this format: 0000-0000-0000-0000 </p>
                     </div>
                     `
@@ -383,7 +383,7 @@ submitButton.addEventListener
             {
                 addressErrorMessage.innerHTML = `
                     <div class = 'messageToUser' >
-                        <img src="./images/errorIcon.png" alt="">
+                        <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                         <p>Postal code format invalid! Please enter postal code in this format (A0A0A0) </p>
                     </div>`
                     return false
@@ -409,7 +409,7 @@ submitButton.addEventListener
             {
                 PhoneErrorMessage.innerHTML = `
                     <div class = 'messageToUser' >
-                        <img src="./images/errorIcon.png" alt="">
+                        <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                         <p>Phone number format invalid! Please ensure there is a '+' sign and 10 digits. </p>
                     </div>`
 
@@ -421,7 +421,7 @@ submitButton.addEventListener
                 {
                     PhoneErrorMessage.innerHTML = `
                         <div class = 'messageToUser' >
-                            <img src="./images/errorIcon.png" alt="">
+                            <img src="./images/errorIcon.png" alt="A picture of a danger sign singinfying error">
                             <p>Phone number format invalid! Please enter phone number in this format (+11111111111) </p>
                         </div>`
 
@@ -644,7 +644,7 @@ function handleConfirm(){
     buttonsDiv.style.display = 'none'
     toHideInRecipt.forEach(element => element.style.display = 'none')
     orderDetailsTable.innerHTML += `<div class = 'messageToUser' >
-                                    <img src="./images/successIcon.png" alt="">
+                                    <img src="./images/successIcon.png" alt="A picture of a green check mark icon">
                                     <p>Order confirmed! Your meal will be prepared shortly!</p>
                                     </div>
                                 <a class="anotherOrder" href="order.html">Place Another Order</a>
@@ -687,7 +687,7 @@ function handleCancel(){
     subtotal = 0;
     form.reset()
 
-    orderDetailsTable.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="">
+    orderDetailsTable.innerHTML = `<div class = 'messageToUser' ><img src="./images/successIcon.png" alt="A picture of a danger sign singinfying error">
                 <p>Your order was successfully cancelled!</p></div>`
                 setTimeout(() => {
                     orderDetailsTable.innerHTML = `<table id="orderDetailsTable" >
